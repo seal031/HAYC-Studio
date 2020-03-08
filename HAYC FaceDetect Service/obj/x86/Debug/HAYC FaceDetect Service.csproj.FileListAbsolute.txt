@@ -1,0 +1,14 @@
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\HAYC FaceDetect Service.exe.config
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\HAYC FaceDetect Service.exe
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\HAYC FaceDetect Service.pdb
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\log4net.dll
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\NamedPipeWrapper.dll
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\Newtonsoft.Json.dll
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\log4net.xml
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\NamedPipeWrapper.pdb
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\Newtonsoft.Json.xml
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\obj\x86\Debug\HAYC FaceDetect Service.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\obj\x86\Debug\HAYC FaceDetect Service.exe
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\obj\x86\Debug\HAYC FaceDetect Service.pdb
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\HAYC ProcessCommunicate Library.dll
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x86\Debug\HAYC ProcessCommunicate Library.pdb

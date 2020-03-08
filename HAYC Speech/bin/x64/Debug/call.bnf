@@ -1,0 +1,13 @@
+#BNF+IAT 1.0;
+!grammar call;
+!slot <want>;
+!slot <dialpre>;
+!slot <contact>;
+
+!start <callstart>;
+<callstart>:[<want>]<dial>;
+<want>:我想|我要|请打开|请使用|我想要|请帮我;
+<dial>:<dialpre><contact>;
+<dialpre>:你好;
+<contact>:
+恬恬|齐婉初|齐可新;

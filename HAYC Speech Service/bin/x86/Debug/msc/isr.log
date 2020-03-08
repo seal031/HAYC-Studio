@@ -1,0 +1,24 @@
+============================================================
+Time  2020/02/27 14:13:54 232 
+============================================================
+[2020/02/27 14:13:54 233] isr        1659 isr loaded!  
+[2020/02/27 14:13:54 233] isr        1642 SYS_MSG_REGCB param0 =   msp_status_cb  param1 =   func(df23068) 
+[2020/02/27 14:13:54 233] isr        1537 ASR_MSG_SSB  
+[2020/02/27 14:13:54 233] isr        1066 session_begin() [in], params:   engine_type = local,asr_res_path = msc/res/asr/common.jet, sample_rate = 16000, grm_build_path = msc/res/asr/GrmBuilld, local_grammar = , result_type = xml, result_encoding = GB2312, asr_denoise=1  nil  
+[2020/02/27 14:13:54 233] isr        927  vad_set [in]  
+[2020/02/27 14:13:54 233] isr        962  vad_enable :  true  
+[2020/02/27 14:13:54 233] isr        980  vad_bos :  10000  
+[2020/02/27 14:13:54 233] isr        981  vad_eos :  2000  
+[2020/02/27 14:13:54 233] isr        886  enable_vad [in]  
+[2020/02/27 14:13:54 234] isr        918  vad enabled!  2000  10000  
+[2020/02/27 14:13:54 234] isr        921  enable_vad [out]  
+[2020/02/27 14:13:54 234] isr        987  vad_set [out] | ret =  0  
+[2020/02/27 14:13:54 234] isr        1182 cur_engine_type =   local  
+[2020/02/27 14:13:54 234] isr        992  local_session_begin  
+[2020/02/27 14:13:54 247] isr        723  local_cbmsg_handler  ,msg=  409  param1=  23002  
+[2020/02/27 14:13:54 247] isr        399  error occurred:   local  23002  
+[2020/02/27 14:14:53 594] isr        1547 ASR_MSG_AUW,   local  
+[2020/02/27 14:14:53 594] isr        1559 6400  1  
+[2020/02/27 14:14:53 594] isr        1569 once_bytes:   6400  
+[2020/02/27 14:14:53 634] isr        851  [aud] speech start  
+[2020/02/27 14:14:53 634] isr        798  1  msc  

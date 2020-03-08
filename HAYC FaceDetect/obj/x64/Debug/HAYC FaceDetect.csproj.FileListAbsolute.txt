@@ -1,0 +1,8 @@
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\bin\x64\Debug\HAYC FaceDetect.exe.config
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\bin\x64\Debug\HAYC FaceDetect.exe
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\bin\x64\Debug\HAYC FaceDetect.pdb
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\obj\x64\Debug\HAYC FaceDetect.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\obj\x64\Debug\HAYC_FaceDetect.Properties.Resources.resources
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\obj\x64\Debug\HAYC FaceDetect.csproj.GenerateResource.Cache
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\obj\x64\Debug\HAYC FaceDetect.exe
+E:\GitHubProject\HAYC Studio\HAYC FaceDetect\obj\x64\Debug\HAYC FaceDetect.pdb

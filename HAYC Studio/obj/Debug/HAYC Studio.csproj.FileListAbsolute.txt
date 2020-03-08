@@ -1,0 +1,2 @@
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\Debug\HAYC Studio.exe.config
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\Debug\Smart安全智能终端.exe.config
