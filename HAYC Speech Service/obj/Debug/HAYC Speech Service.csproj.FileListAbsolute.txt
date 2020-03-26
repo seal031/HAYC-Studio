@@ -29,5 +29,9 @@ E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Newtonsoft.Json.x
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Quartz.pdb
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Quartz.xml
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC Speech Service.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC_Speech_Service.ProjectInstaller.resources
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC Speech Service.csproj.GenerateResource.Cache
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC Speech Service.exe
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC Speech Service.pdb
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\DevComponents.DotNetBar2.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\DevComponents.DotNetBar2.xml

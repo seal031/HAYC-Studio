@@ -16,9 +16,12 @@ namespace HAYC_Speech_Service.Voice
     {
         public static byte[] data;
 
-        public static string ASR_RES_PATH = "fo|res/asr/common.jet"; //离线语法识别资源路径
-        public static string GRM_BUILD_PATH = "res/asr/GrmBuilld"; //构建离线语法识别网络生成数据保存路径
-        public static string GRM_FILE = "call.bnf"; //构建离线识别语法网络所用的语法文件
+        //public static string ASR_RES_PATH = @"fo|F:\res\asr\common.jet"; //离线语法识别资源路径
+        //public static string GRM_BUILD_PATH = @"F:\res\asr\GrmBuilld"; //构建离线语法识别网络生成数据保存路径
+        //public static string GRM_FILE = @"F:\\call.bnf"; //构建离线识别语法网络所用的语法文件
+        public static string ASR_RES_PATH = "fo|" + Application.StartupPath + @"\res\asr\common.jet"; //离线语法识别资源路径
+        public static string GRM_BUILD_PATH = Application.StartupPath + @"\res\asr\GrmBuilld"; //构建离线语法识别网络生成数据保存路径
+        public static string GRM_FILE = Application.StartupPath + @"\call.bnf"; //构建离线识别语法网络所用的语法文件
         public static string LEX_NAME = "contact"; //更新离线识别语法的contact槽（语法文件为此示例中使用的call.bnf）
 
         public static int build_grammar(IntPtr udata)
@@ -28,9 +31,7 @@ namespace HAYC_Speech_Service.Voice
             sr.BaseStream.Seek(0, SeekOrigin.Begin);
             string s = sr.ReadToEnd();
             sr.Close();
-
             fs.Close();
-
             byte[] data = Encoding.Default.GetBytes(s);
             uint grm_cnt_len = (uint)data.Length;
 
@@ -57,8 +58,8 @@ namespace HAYC_Speech_Service.Voice
         private static byte[] allData = new byte[] { };
         public static string run_asr(byte[] data)
         {
-            audioPlayer.Clear();
-            audioPlayer.Play(data);
+            //audioPlayer.Clear();
+            //audioPlayer.Play(data);
             string asr_params = "";
             string rec_rslt = null;
             string session_id = null;
@@ -87,7 +88,7 @@ namespace HAYC_Speech_Service.Voice
             Marshal.FreeHGlobal(p);
             if (null == session_id) return string.Empty;
 
-            Console.Write("开始识别...\n");
+            LogHelper.WriteLog("开始识别...\n");
 
             p = pcm_data;
             while (true)
@@ -137,7 +138,7 @@ namespace HAYC_Speech_Service.Voice
                 rec_rslt = Marshal.PtrToStringAnsi(p);
                 Thread.Sleep(150);
             }
-            Console.Write("\n识别结束：\n");
+            LogHelper.WriteLog("\n识别结束：\n");
             if (null != rec_rslt)
             {
                 Console.Write("{0}\n", rec_rslt);
@@ -160,11 +161,11 @@ namespace HAYC_Speech_Service.Voice
 
             if (ecode == 0 && null != info)
             {
-                Console.Write("构建语法成功！ 语法ID:{0}\n", info);
+                LogHelper.WriteLog("构建语法成功！ 语法ID:"+ info);
             }
             else
             {
-                Console.Write("构建语法失败！{0:D}\n", ecode);
+                LogHelper.WriteLog("构建语法失败！"+ecode);
             }
 
             return 0;
@@ -176,11 +177,11 @@ namespace HAYC_Speech_Service.Voice
 
             if (ERROR.MSP_SUCCESS == (ERROR)ecode)
             {
-                Console.Write("更新词典成功！\n");
+                LogHelper.WriteLog("更新词典成功！\n");
             }
             else
             {
-                Console.Write("更新词典失败！{0:D}\n", ecode);
+                LogHelper.WriteLog("更新词典失败！\n");
             }
 
             return 0;
@@ -191,26 +192,26 @@ namespace HAYC_Speech_Service.Voice
             audioPlayer = PlayerFactory.CreateAudioPlayer(0, 16000, 1, 16, 200);
             //56089e95 ha
             //564d2cdc
-            string login_config = "appid = 5e4f7a2b"; //登录参数写自己创建的语音听写的id
+            string login_config = "appid = 5e796958 "; //登录参数写自己创建的语音听写的id 5e4f7a2b
             int ret = 0;
             try
             {
                 ret = msp_cmn.MSPLogin("", "", login_config); //第一个参数为用户名，第二个参数为密码，传NULL即可，第三个参数是登录参数
                 if (ERROR.MSP_SUCCESS != (ERROR)ret)
                 {
-                    Console.Write("登录失败：{0:D}\n", ret);
+                    LogHelper.WriteLog("登录失败\n");
                     return 0;
                 }
                 else
                 {
-                    Console.WriteLine("登录成功");
+                    LogHelper.WriteLog("登录成功");
                 }
 
-                Console.Write("构建离线识别语法网络...\n");
+                LogHelper.WriteLog("构建离线识别语法网络...\n");
                 ret = build_grammar((IntPtr)0); //第一次使用某语法进行识别，需要先构建语法网络，获取语法ID，之后使用此语法进行识别，无需再次构建
                 if (ERROR.MSP_SUCCESS != (ERROR)ret)
                 {
-                    Console.Write("构建语法调用失败！\n");
+                    LogHelper.WriteLog("构建语法调用失败！\n");
                     return 0;
                 }
 
@@ -219,12 +220,17 @@ namespace HAYC_Speech_Service.Voice
                 //    Thread.Sleep(300);
                 //}
 
-                Console.Write("离线识别语法网络构建完成，开始识别...\n");
+                LogHelper.WriteLog("离线识别语法网络构建完成，开始识别...\n");
                 return 0;
             }
             finally
             { 
             }
+        }
+
+        public static void logOut()
+        {
+            msp_cmn.MSPLogout();
         }
 
         private static bool audio_iat(string audio_path, string session_begin_params)

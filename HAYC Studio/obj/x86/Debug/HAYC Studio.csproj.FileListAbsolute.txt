@@ -93,13 +93,18 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\CefSharp.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\CefSharp.XML
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\CefSharp.WinForms.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\CefSharp.WinForms.XML
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Smart安全智能终端.exe.config
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Smart安全智能终端.exe
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Smart安全智能终端.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Autofac.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Common.Logging.Core.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Common.Logging.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Confluent.Kafka.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\DevComponents.DotNetBar2.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\DevComponents.Instrumentation.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\fastJSON.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\HAYC Message.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\HAYC ProcessCommunicate Library.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\log4net.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\NamedPipeWrapper.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Newtonsoft.Json.dll
@@ -108,6 +113,7 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\System.Buffers.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\System.Memory.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\HAYC Message.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\HAYC ProcessCommunicate Library.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Autofac.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Autofac.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Common.Logging.pdb
@@ -116,6 +122,7 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Common.Logging.Core.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Common.Logging.Core.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Confluent.Kafka.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\DevComponents.DotNetBar2.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\DevComponents.Instrumentation.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\log4net.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\NamedPipeWrapper.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Newtonsoft.Json.xml
@@ -124,14 +131,21 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Quartz.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\System.Buffers.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\System.Memory.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Interop.WMPLib.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\AxInterop.WMPLib.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC Studio.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\Interop.WMPLib.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\AxInterop.WMPLib.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC Studio.csproj.ResolveComReference.cache
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.LevitatedBall.BigForm.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.LevitatedBall.LevitateBall.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.LevitatedBall.MainBallControl.resources
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.LoginForm.resources
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.MainStudio.resources
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.Properties.Resources.resources
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.ScreenForm.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.Setup.resources
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC Studio.csproj.GenerateResource.Cache
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Smart安全智能终端.exe.config
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Smart安全智能终端.exe
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\Smart安全智能终端.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\Smart安全智能终端.exe
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\Smart安全智能终端.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.LevitatedBall.MessageForm.resources

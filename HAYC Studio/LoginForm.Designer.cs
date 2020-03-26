@@ -101,7 +101,9 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统登录";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.Shown += new System.EventHandler(this.LoginForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -116,5 +118,6 @@
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevComponents.DotNetBar.ButtonX btn_login;
+        private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
     }
 }

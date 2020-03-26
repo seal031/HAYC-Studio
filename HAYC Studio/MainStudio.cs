@@ -1,5 +1,4 @@
-﻿using HAYC_Speech_Service.Communicate;
-using NamedPipeWrapper;
+﻿using NamedPipeWrapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

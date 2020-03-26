@@ -75,10 +75,10 @@ namespace HAYC_Studio.Browser
             if (cookieKey != string.Empty && cookieValue != string.Empty)
             {
                 HttpWorker.SetCookie(url, cookieKey, cookieValue);
-                string hostUrl = "http://" + new Uri(url).Host + ":" + new Uri(url).Port + "/";
-                this.Navigate(hostUrl);
-                this.Refresh();
-                Thread.Sleep(1000);
+                //string hostUrl = "http://" + new Uri(url).Host + ":" + new Uri(url).Port + "/";
+                //this.Navigate(hostUrl);
+                //this.Refresh();
+                //Thread.Sleep(1000);
                 this.Navigate(url);
             }
             else

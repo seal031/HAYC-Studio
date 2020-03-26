@@ -256,6 +256,7 @@ public class TransDicToUserInfo
             screen.browserType = (BrowserType)Enum.Parse(typeof(BrowserType), screenModel.browserTypeName);
             loginInfo.ScreenList.Add(screen);
         }
+        loginInfo.User = info.User;
         return loginInfo;
     }
 }

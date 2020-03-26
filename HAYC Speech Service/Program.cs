@@ -14,15 +14,15 @@ namespace HAYC_Speech_Service
         /// </summary>
         static void Main()
         {
-            //ServiceBase[] ServicesToRun;
-            //ServicesToRun = new ServiceBase[]
-            //{
-            //    new SpeechService()
-            //};
-            //ServiceBase.Run(ServicesToRun);
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[]
+            {
+                new SpeechService()
+            };
+            ServiceBase.Run(ServicesToRun);
 
-            SpeechService service = new SpeechService();
-            service.OnStart();
+            //SpeechService service = new SpeechService();
+            //service.OnStart();
         }
     }
 }

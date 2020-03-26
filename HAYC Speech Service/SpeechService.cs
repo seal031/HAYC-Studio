@@ -1,4 +1,5 @@
 ﻿using HAYC_ProcessCommunicate_Library;
+using HAYC_Speech_Service.Voice;
 using NamedPipeWrapper;
 using Quartz;
 using Quartz.Impl;
@@ -14,6 +15,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HAYC_Speech_Service
 {
@@ -23,6 +25,7 @@ namespace HAYC_Speech_Service
         string pipeName = "SpeechPipe";
         PipeCommunicateClient pipeClient;
         SpeechWorker speechWorker;
+        Thread threadforwork;
 
         IScheduler scheduler;
         IJobDetail job;
@@ -30,24 +33,55 @@ namespace HAYC_Speech_Service
         public SpeechService()
         {
             InitializeComponent();
+        }
+
+        private void workFunction()
+        {
+            LogHelper.setConsole(0);
+            //LogHelper.WriteLog("开始执行workFunction");
+            //LogHelper.WriteLog(System.Windows.Forms.Application.StartupPath);
             pipeClient = new PipeCommunicateClient(pipeName);
             pipeClient.OnServerMessage += PipeClient_OnServerMessage;
             speechWorker = new SpeechWorker(pipeClient);
+
+            pipeClient.startClient();
+            startJob();
+            speechWorker.startPick();
         }
 
         protected override void OnStart(string[] args)
         {
-            
+            // TODO: Add code here to start your service.
+            if (threadforwork == null)
+            {
+                threadforwork = new Thread(workFunction);
+            }
+            threadforwork.IsBackground = true;
+            threadforwork.Start();
         }
-        
+
         protected override void OnStop()
         {
+            LogHelper.WriteLog("开始执行OnStop");
+            //执行清理工作
+            if (threadforwork != null)
+            {
+                if (threadforwork.ThreadState == System.Threading.ThreadState.Running)
+                {
+                    threadforwork.Abort();
+                }
+            }
+            stopJob();
+            speechWorker.dispose();
+            speechWorker = null;
+            pipeClient.stopClient();
+            pipeClient = null;
+
+            //System.Environment.Exit(1);
         }
         public void OnStart()
         {
-            pipeClient.startClient();
-            startJob();
-            speechWorker.startPick();
+            workFunction();
             while (true)
             { }
         }
@@ -84,6 +118,9 @@ namespace HAYC_Speech_Service
                     case CommunicateMessageType.MESSAGE://普通文本消息
                         dealMessage(messageEntity);
                         break;
+                    case CommunicateMessageType.SETTING://设置信息
+                        dealSetting(messageEntity);
+                        break;
                     default:
                         LogHelper.WriteLog("未指定的消息类型");
                         break;
@@ -105,11 +142,12 @@ namespace HAYC_Speech_Service
         }
         private void dealStartCommand(ProcessCommunicateMessage message)
         {
+            LogHelper.WriteLog("接收到pipe指令，开始startPick");
             speechWorker.startPick();
         }
         private void dealStopCommand(ProcessCommunicateMessage message)
         {
-            speechWorker.endPick();
+            //speechWorker.endPick();
         }
 
         private void dealSpeechResult(ProcessCommunicateMessage message)
@@ -122,6 +160,28 @@ namespace HAYC_Speech_Service
 
         }
 
+        private void dealSetting(ProcessCommunicateMessage messageEntity)
+        {
+            var settingString = messageEntity.Message;
+            SpeechSetting setting = SpeechSetting.fromJson(settingString);
+            if (settingString != null)
+            {
+                LocalParams.BufferMilliseconds = setting.BufferMilliseconds;
+                LocalParams.EndPickAdditional = setting.EndPickAdditional;
+                LocalParams.MicVolumnPickerSleepSecond = setting.MicVolumnPickerSleepSecond;
+                LocalParams.VolumnCommandThreshold = setting.VolumnCommandThreshold;
+                LocalParams.VolumnSleepThreshold = setting.VolumnSleepThreshold;
+                LocalParams.UnKownTimes = setting.UnKownTimes;
+                LogHelper.WriteLog("设置内容生效。设置内容为："+messageEntity.Message);
+                //设置更新到局部变量后，让局部变量重新赋值给程序。
+                speechWorker.useLocalSetting();
+            }
+            else
+            {
+                LogHelper.WriteLog("设置内容无效。设置消息内容为：" + messageEntity.Message);
+            }
+        }
+
         private void startJob()
         {
             try
@@ -130,8 +190,8 @@ namespace HAYC_Speech_Service
                 {
                     scheduler = StdSchedulerFactory.GetDefaultScheduler();
                     JobWorker.worker = this;
-                    job = JobBuilder.Create<JobWorker>().WithIdentity("fireJob", "jobs").Build();
-                    ITrigger trigger = TriggerBuilder.Create().WithIdentity("fireTrigger", "triggers").StartAt(DateTimeOffset.Now)
+                    job = JobBuilder.Create<JobWorker>().WithIdentity("SpeechJob", "jobs").Build();
+                    ITrigger trigger = TriggerBuilder.Create().WithIdentity("SpeechTrigger", "triggers").StartAt(DateTimeOffset.Now)
                         .WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever()).Build();
                     scheduler.ScheduleJob(job, trigger);//把作业，触发器加入调度器。  
                 }
@@ -139,16 +199,28 @@ namespace HAYC_Speech_Service
             }
             catch (Exception ex)
             {
-                //FileWorker.LogHelper.WriteLog("定时任务异常：" + ex.Message);
+                LogHelper.WriteLog("定时任务异常：" + ex.Message);
+            }
+        }
+
+        private void stopJob()
+        {
+            if (job != null)
+            {
+                job = null;
+            }
+            if (scheduler != null)
+            {
+                scheduler.Shutdown(false);
+                scheduler = null;
             }
         }
 
         public void doJobWork()
         {
-            if ((DateTime.Now - MicVolumnPicker.lastCommandTime).TotalSeconds > 30 && speechWorker.isWakeUp == true)
+            if ((DateTime.Now - MicVolumnPicker.lastCommandTime).TotalSeconds >= LocalParams.MicVolumnPickerSleepSecond && speechWorker.IsWakeUp == true)
             {
-                speechWorker.isWakeUp = false;
-                Console.WriteLine("进入睡眠状态");
+                speechWorker.IsWakeUp = false;
             }
         }
     }

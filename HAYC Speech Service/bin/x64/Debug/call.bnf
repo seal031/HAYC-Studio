@@ -8,5 +8,5 @@
 <callstart>:[<want>]<dial>;
 <want>:我想|我要|请打开|请使用|我想要|请帮我;
 <dial>:<dialpre><contact>;
-<dialpre>:打开|关闭|小安;
-<contact>:系统|GIS|地图|摄像头A-123|三维界面|小安;
+<dialpre>:打开|关闭|小安|切换到;
+<contact>:系统|GIS|地图|摄像头A-123|三维界面|小安|GIS屏|信息屏;

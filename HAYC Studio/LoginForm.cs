@@ -1,5 +1,6 @@
 ﻿using DevComponents.DotNetBar;
 using fastJSON;
+using HAYC_ProcessCommunicate_Library;
 using HAYC_Studio.Browser;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,6 +32,18 @@ namespace HAYC_Studio
 
         public int recordAheadInt = 10;//录像播放提前量，秒
 
+        Speaker speaker;
+        PipeCommunicateServer pipeServer;
+        PipeCommunicateServerWorker pipeServerWorker;
+
+        private const string speechServiceName = "HAYC Speech Service";
+        private const string faceServiceName = "HAYC Face Service";
+        WindowsServiceManager windowsServerManager = new WindowsServiceManager(new List<string>() { speechServiceName, faceServiceName });
+
+
+        public LevitatedBall.LevitateBall levitateBall = new LevitatedBall.LevitateBall();
+       
+
         public LoginForm()
         {
             InitializeComponent();
@@ -42,7 +56,21 @@ namespace HAYC_Studio
                 MessageWorker.showMessage("读取本地配置出现错误，请检查配置文件及程序日志");
                 Application.Exit();
             }
+            levitateBall.Show();
+            pipeServer = new PipeCommunicateServer("SpeechPipe");
+            pipeServer.OnClientMessage += Server_OnClientMessage;
+            pipeServer.startServer();
+            pipeServerWorker = new PipeCommunicateServerWorker(pipeServer);
+            mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
+            this.Controls.Add(mediaPlayer);
+            mediaPlayer.Visible = false;
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
+            speaker = new Speaker(mediaPlayer, pipeServer);
+            windowsServerManager.StartService(speechServiceName, needRestart: true);
+            levitateBall.windowsServerManager = windowsServerManager;
         }
+
 
         private bool loadLocalConfig()
         {
@@ -151,7 +179,12 @@ namespace HAYC_Studio
             }
             catch (Exception ex)
             {
-                LogHelper.WriteLog("获取用户信息失败:" + ex.Message);   
+                LogHelper.WriteLog("获取用户信息失败:" + ex.Message);
+                //return false;
+                //todo 临时************************************************************************
+                //*************************************************************************************
+                return true;
+                //*************************************************************************************
             }
 
             return true;
@@ -168,10 +201,10 @@ namespace HAYC_Studio
                 int userHopeScreenCount = loginInfo.ScreenList.Count;//用户期望的屏幕数
                 int realScreenCount = ScreenWorker.getScreenCount();//机器上实际的屏幕数
                 string screenType = ConfigWorker.GetConfigValue("screenType");
-                if (screenType == "s")//如果单宽屏
+                if (screenType == "s"||screenType=="o")//如果单宽屏
                 {
                     //正常显示
-                    ShowForm(loginInfo, "s");
+                    ShowForm(loginInfo, screenType);
                 }
                 else if (screenType == "m")//如果多屏
                 {
@@ -180,7 +213,7 @@ namespace HAYC_Studio
                         //如果期望屏幕数大于实际屏幕数，提示
                         MessageWorker.showMessage("实际的屏幕数量少于用户要打开的屏幕数量，部分屏幕将无法显示。");
                     }
-                    ShowForm(loginInfo, "m");
+                    ShowForm(loginInfo, screenType);
                 }
             }
         }
@@ -208,7 +241,7 @@ namespace HAYC_Studio
                     string url = remoteURL + screenInfo.ModelURL;
                     form.Text = screenInfo.ModelName + "屏";
                     form.initWebBrowser(browserType, url);
-                    form.Navigate(url, cookieKey, loginResponse);
+                    form.Navigate(url, loginInfo.User.UserAccount, loginInfo.User.UserToken);
                     form.Show();
                 }
             }
@@ -259,12 +292,146 @@ namespace HAYC_Studio
                         form.Text = screenInfo.ModelName + "屏";
                         url = "http://192.168.111.70:2000/#/ams/alarmMonitor";
                         form.initWebBrowser(browserType, url);
-                        form.Navigate(url, cookieKey, loginResponse);
+                        form.Navigate(url, loginInfo.User.UserAccount, loginInfo.User.UserToken);
                         form.Show();
                     }
                 }
             }
+            else if (model == "o")//单屏单窗体，用于临时演示
+            {
+                screenInfoList = new List<ScreenInfo>();
+                screenInfoList.Add(new ScreenInfo() { browserType = BrowserType.IE, Left = 0, Top = 0, ModelIndex = 1, ModelName = "信息", ModelURL = "/ms/alarmMonitor" });
+                screenInfoList.Add(new ScreenInfo() { browserType = BrowserType.IE, Left = 0, Top = 0, ModelIndex = 2, ModelName = "视频", ModelURL = "/ms/alarmentry" });
+                tempList.Add("GIS屏", remoteURL+ "/ms/alarmMonitor");
+                tempList.Add("信息屏", remoteURL+ "/ms/alarmentry");
+
+                ScreenInfo screenInfo = screenInfoList[0];
+                string modelName = screenInfo.ModelName;
+                ScreenForm form = fb.createForm(0, 0, Screen.PrimaryScreen.WorkingArea.Width, Screen.AllScreens[0].Bounds.Height - 30, modelName);
+                FormController.addForm(screenInfo.ModelIndex, modelName, form);
+                form.Left = 0;
+                form.Visible = true;
+                string url = remoteURL +  screenInfo.ModelURL;
+                form.Text = screenInfo.ModelName + "屏";
+                form.initWebBrowser(browserType, url);
+                form.Navigate(url, "HA_LINK_LOGIN_INFO", loginResponse);
+                tempForm = form;
+                form.Show();
+            }
             this.Hide();
+        }
+        public Dictionary<string,string> tempList=new Dictionary<string, string>();
+        public ScreenForm tempForm;
+
+        private void Server_OnClientMessage(NamedPipeWrapper.NamedPipeConnection<string, string> connection, string message)
+        {
+            ProcessCommunicateMessage messageEntity = ProcessCommunicateMessage.fromJson(message);
+            if (messageEntity == null)
+            {
+                LogHelper.WriteLog("收到pipe服务端消息：" + message + "。反序列化失败");
+            }
+            else
+            {
+                switch (messageEntity.MessageType)
+                {
+                    case CommunicateMessageType.COMMAND:
+                        dealCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.SCORE://请求计算人脸对比得分
+                        dealScoreCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.FEAT://请求计算人脸特征码
+                        dealFeatCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.START://请求开始识别
+                        dealStartCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.STOP://请求停止识别
+                        dealStopCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.SPEECHRESULT://语音识别结果
+                        dealSpeechResult(messageEntity);
+                        break;
+                    case CommunicateMessageType.MESSAGE://普通文本消息
+                        dealMessage(messageEntity);
+                        break;
+                    case CommunicateMessageType.SETTING://设置信息
+                        dealSetting(messageEntity);
+                        break;
+                    default:
+                        LogHelper.WriteLog("未指定的消息类型");
+                        break;
+                }
+            }
+        }
+        private void dealCommand(ProcessCommunicateMessage message)
+        {
+
+        }
+        private void dealScoreCommand(ProcessCommunicateMessage message)
+        {
+
+        }
+        private void dealFeatCommand(ProcessCommunicateMessage message)
+        {
+
+        }
+        private void dealStartCommand(ProcessCommunicateMessage message)
+        {
+            
+        }
+        private void dealStopCommand(ProcessCommunicateMessage message)
+        {
+            
+        }
+
+        private void dealSpeechResult(ProcessCommunicateMessage message)
+        {
+            speaker.play(message.Message);
+            if (message.Message != string.Empty)
+            {
+                levitateBall.bigForm.addSpeechMessage(message.Message);
+                levitateBall.showMessage(message.Message);
+            }
+            //FormCommand command = new FormCommand(message.Message);
+            //command.executeCommand();
+            switch (message.Message)
+            {
+                case "切换到信息屏":
+                    var url = tempList["信息屏"];
+                    tempForm.Navigate(url, "HA_LINK_LOGIN_INFO", loginResponse);
+                    break;
+                case "切换到视频屏":
+                    var url1 = tempList["GIS屏"];
+                    tempForm.Navigate(url1, "HA_LINK_LOGIN_INFO", loginResponse);
+                    break;
+                case "关闭系统":
+                    Application.Exit();
+                    break;  
+                default:
+                    break;
+            }
+        }
+
+        private void dealMessage(ProcessCommunicateMessage message)
+        {
+
+        }
+
+        private void dealSetting(ProcessCommunicateMessage messageEntity)
+        {
+            
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //关闭服务
+            windowsServerManager.StopService(speechServiceName);
+        }
+
+        private void LoginForm_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

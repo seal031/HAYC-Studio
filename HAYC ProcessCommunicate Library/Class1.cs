@@ -84,8 +84,17 @@ namespace HAYC_ProcessCommunicate_Library
         {
             if (isConnected == false)
             {
-                pipeClient.Start();
+                pipeClient.Start(); 
                 isConnected = true;
+            }
+        }
+
+        public void stopClient()
+        {
+            if (isConnected)
+            {
+                pipeClient.Stop();
+                pipeClient = null;
             }
         }
 
@@ -253,6 +262,51 @@ namespace HAYC_ProcessCommunicate_Library
         /// <summary>
         /// 普通文本消息
         /// </summary>
-        MESSAGE
+        MESSAGE,
+        /// <summary>
+        /// 主程序对服务的设置
+        /// </summary>
+        SETTING
+    }
+    
+    /// <summary>
+    /// 跨进程交互的语音识别设置对象
+    /// </summary>
+    public class SpeechSetting
+    {
+        public float VolumnSleepThreshold { get; set; }
+        public float VolumnCommandThreshold { get; set; }
+        public int BufferMilliseconds { get; set; }
+        //public int SpeechSpeed { get; set; }
+        public int EndPickAdditional { get; set; }
+        public int MicVolumnPickerSleepSecond { get; set; }
+        public int UnKownTimes { get; set; }
+
+        public string toJson()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
+
+        public static SpeechSetting fromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<SpeechSetting>(json);
+        }
+    }
+
+    /// <summary>
+    /// 跨进程交互的人脸识别设置对象
+    /// </summary>
+    public class FaceSetting
+    {
+        public string toJson()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
+
+        public static FaceSetting fromJson(string json)
+        {
+            return JsonConvert.DeserializeObject<FaceSetting>(json);
+        }
+
     }
 }
