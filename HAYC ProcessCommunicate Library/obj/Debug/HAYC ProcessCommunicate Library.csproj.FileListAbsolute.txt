@@ -6,4 +6,3 @@ E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Debug\NamedPipe
 E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Debug\Newtonsoft.Json.xml
 E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\obj\Debug\HAYC ProcessCommunicate Library.dll
 E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\obj\Debug\HAYC ProcessCommunicate Library.pdb
-E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\obj\Debug\HAYC ProcessCommunicate Library.csprojResolveAssemblyReference.cache

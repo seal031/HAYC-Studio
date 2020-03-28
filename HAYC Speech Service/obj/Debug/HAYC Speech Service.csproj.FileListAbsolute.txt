@@ -9,6 +9,7 @@ E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\HAYC Speech Servi
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\HAYC Speech Service.pdb
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Common.Logging.Core.dll
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Common.Logging.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\DevComponents.DotNetBar2.dll
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\ESBasic.dll
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\HAYC ProcessCommunicate Library.dll
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\log4net.dll
@@ -22,6 +23,7 @@ E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Common.Logging.pd
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Common.Logging.xml
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Common.Logging.Core.pdb
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\Common.Logging.Core.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\DevComponents.DotNetBar2.xml
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\log4net.xml
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\NamedPipeWrapper.pdb
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\NAudio.xml
@@ -33,5 +35,3 @@ E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC_Speech_Service.P
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC Speech Service.csproj.GenerateResource.Cache
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC Speech Service.exe
 E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\Debug\HAYC Speech Service.pdb
-E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\DevComponents.DotNetBar2.dll
-E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x64\Debug\DevComponents.DotNetBar2.xml

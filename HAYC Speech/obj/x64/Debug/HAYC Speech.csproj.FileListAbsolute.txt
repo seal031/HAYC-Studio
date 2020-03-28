@@ -6,6 +6,7 @@ E:\GitHubProject\HAYC Studio\HAYC Speech\bin\x64\Debug\SharpCapture.dll
 E:\GitHubProject\HAYC Studio\HAYC Speech\bin\x64\Debug\NAudio.xml
 E:\GitHubProject\HAYC Studio\HAYC Speech\bin\x64\Debug\SharpCapture.pdb
 E:\GitHubProject\HAYC Studio\HAYC Speech\bin\x64\Debug\SharpCapture.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech\obj\x64\Debug\HAYC Speech.csprojResolveAssemblyReference.cache
 E:\GitHubProject\HAYC Studio\HAYC Speech\obj\x64\Debug\HAYC_Speech.Form1.resources
 E:\GitHubProject\HAYC Studio\HAYC Speech\obj\x64\Debug\HAYC_Speech.Properties.Resources.resources
 E:\GitHubProject\HAYC Studio\HAYC Speech\obj\x64\Debug\HAYC Speech.csproj.GenerateResource.Cache

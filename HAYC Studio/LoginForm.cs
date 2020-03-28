@@ -41,7 +41,7 @@ namespace HAYC_Studio
         WindowsServiceManager windowsServerManager = new WindowsServiceManager(new List<string>() { speechServiceName, faceServiceName });
 
 
-        public LevitatedBall.LevitateBall levitateBall = new LevitatedBall.LevitateBall();
+        //public LevitatedBall.LevitateBall levitateBall = new LevitatedBall.LevitateBall();
        
 
         public LoginForm()
@@ -56,7 +56,7 @@ namespace HAYC_Studio
                 MessageWorker.showMessage("读取本地配置出现错误，请检查配置文件及程序日志");
                 Application.Exit();
             }
-            levitateBall.Show();
+            //levitateBall.Show();
             pipeServer = new PipeCommunicateServer("SpeechPipe");
             pipeServer.OnClientMessage += Server_OnClientMessage;
             pipeServer.startServer();
@@ -68,7 +68,7 @@ namespace HAYC_Studio
             ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
             speaker = new Speaker(mediaPlayer, pipeServer);
             windowsServerManager.StartService(speechServiceName, needRestart: true);
-            levitateBall.windowsServerManager = windowsServerManager;
+            //levitateBall.windowsServerManager = windowsServerManager;
         }
 
 
@@ -390,8 +390,8 @@ namespace HAYC_Studio
             speaker.play(message.Message);
             if (message.Message != string.Empty)
             {
-                levitateBall.bigForm.addSpeechMessage(message.Message);
-                levitateBall.showMessage(message.Message);
+                //levitateBall.bigForm.addSpeechMessage(message.Message);
+                //levitateBall.showMessage(message.Message);
             }
             //FormCommand command = new FormCommand(message.Message);
             //command.executeCommand();
@@ -401,7 +401,7 @@ namespace HAYC_Studio
                     var url = tempList["信息屏"];
                     tempForm.Navigate(url, "HA_LINK_LOGIN_INFO", loginResponse);
                     break;
-                case "切换到视频屏":
+                case "切换到GIS屏":
                     var url1 = tempList["GIS屏"];
                     tempForm.Navigate(url1, "HA_LINK_LOGIN_INFO", loginResponse);
                     break;
