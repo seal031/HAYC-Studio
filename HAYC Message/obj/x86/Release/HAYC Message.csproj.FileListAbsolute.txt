@@ -1,0 +1,6 @@
+E:\GitHubProject\HAYC Studio\HAYC Message\bin\x86\Release\HAYC Message.dll
+E:\GitHubProject\HAYC Studio\HAYC Message\bin\x86\Release\HAYC Message.pdb
+E:\GitHubProject\HAYC Studio\HAYC Message\bin\x86\Release\Newtonsoft.Json.dll
+E:\GitHubProject\HAYC Studio\HAYC Message\bin\x86\Release\Newtonsoft.Json.xml
+E:\GitHubProject\HAYC Studio\HAYC Message\obj\x86\Release\HAYC Message.dll
+E:\GitHubProject\HAYC Studio\HAYC Message\obj\x86\Release\HAYC Message.pdb

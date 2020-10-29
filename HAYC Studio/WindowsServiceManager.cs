@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 /// <summary>
 /// Windows服务管理类
@@ -15,13 +16,20 @@ public class WindowsServiceManager
     public WindowsServiceManager(List<string> serviceNameList)
     {
         _controllerList = new List<ServiceController>();
-        foreach (string serviceName in serviceNameList)
+        try
         {
-            if (_controllerList.FirstOrDefault(s => s.ServiceName == serviceName) == null)
+            foreach (string serviceName in serviceNameList)
             {
-                ServiceController controller = new ServiceController(serviceName);
-                _controllerList.Add(controller);
+                if (_controllerList.FirstOrDefault(s => s.ServiceName == serviceName) == null)
+                {
+                    ServiceController controller = new ServiceController(serviceName);
+                    _controllerList.Add(controller);
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            LogHelper.WriteLog("初始化windows服务控制器失败：" + ex.Message);
         }
     }
 
@@ -30,7 +38,8 @@ public class WindowsServiceManager
         var controller = _controllerList.FirstOrDefault(s => s.ServiceName == serviceName);
         if (controller == null)
         {
-            throw new Exception("未找到名为" + serviceName + "的服务");
+            LogHelper.WriteLog("未找到名为" + serviceName + "的服务");
+            throw new Exception("未找到名为" + serviceName + "的服务，请确保本系统相关的windows服务都已正确安装");
         }
         else
         {
@@ -45,6 +54,7 @@ public class WindowsServiceManager
             }
             catch (Exception ex)
             {
+                LogHelper.WriteLog("停止服务" + serviceName + "时发生异常。异常原因：" + ex.Message);
                 throw new Exception("停止服务" + serviceName + "时发生异常。异常原因：" + ex.Message);
             }
         }
@@ -55,7 +65,8 @@ public class WindowsServiceManager
         var controller = _controllerList.FirstOrDefault(s => s.ServiceName == serviceName);
         if (controller == null)
         {
-            throw new Exception("未找到名为" + serviceName + "的服务");
+            LogHelper.WriteLog("未找到名为" + serviceName + "的服务");
+            throw new Exception("未找到名为" + serviceName + "的服务，请确保本系统相关的windows服务都已正确安装");
         }
         else
         {
@@ -81,6 +92,7 @@ public class WindowsServiceManager
             }
             catch (Exception ex)
             {
+                LogHelper.WriteLog("启动服务" + serviceName + "时发生异常。异常原因：" + ex.Message);
                 throw new Exception("启动服务" + serviceName + "时发生异常。异常原因：" + ex.Message);
             }
         }
@@ -118,8 +130,7 @@ public class WindowsServiceManager
         ServiceController controller = new ServiceController(serviceName);
         if (controller == null)
         {
-            //throw new Exception("未找到名为" + serviceName + "的服务");
-            return false;
+            throw new Exception("未找到名为" + serviceName + "的服务，请确保本系统相关的windows服务都已正确安装");
         }
         else
         {

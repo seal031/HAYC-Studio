@@ -1,0 +1,19 @@
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\HAYC ProcessCommunicate Library.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\HAYC ProcessCommunicate Library.pdb
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\log4net.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\NamedPipeWrapper.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\Newtonsoft.Json.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.Common.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.Facility.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.SocketBase.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.SocketEngine.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.SocketService.exe
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\log4net.xml
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\NamedPipeWrapper.pdb
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\Newtonsoft.Json.xml
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.Common.xml
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.Facility.xml
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.SocketBase.xml
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\bin\Release\SuperSocket.SocketEngine.xml
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\obj\Release\HAYC ProcessCommunicate Library.dll
+E:\GitHubProject\HAYC Studio\HAYC ProcessCommunicate Library\obj\Release\HAYC ProcessCommunicate Library.pdb

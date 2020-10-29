@@ -10,19 +10,19 @@ namespace HAYC_Studio
 {
     public class LoginInfo
     {
-        private List<ScreenInfo> _screenList = new List<ScreenInfo>();
+        private List<SceneInfo> _sceneList = new List<SceneInfo>();
         private UserInfo _user = new UserInfo();
 
-        public List<ScreenInfo> ScreenList
+        public List<SceneInfo> SceneList
         {
             get
             {
-                return _screenList;
+                return _sceneList;
             }
 
             set
             {
-                _screenList = value;
+                _sceneList = value;
             }
         }
 
@@ -51,7 +51,7 @@ namespace HAYC_Studio
         private string _userWxCode = string.Empty;
         private string _userDepName = string.Empty;
         private string _userToken = string.Empty;
-
+        
         public string UserRealName
         {
             get
@@ -170,6 +170,30 @@ namespace HAYC_Studio
         }
     }
 
+    public class SceneInfo
+    {
+        private string _sceneName = string.Empty;
+        private List<ScreenInfo> _screenList = new List<ScreenInfo>();
+
+        public string SceneName
+        {
+            get { return _sceneName; }
+            set { _sceneName = value; }
+        }
+        public List<ScreenInfo> ScreenList
+        {
+            get
+            {
+                return _screenList;
+            }
+
+            set
+            {
+                _screenList = value;
+            }
+        }
+    }
+
     public class ScreenInfo
     {
         private string modelName = string.Empty;
@@ -179,6 +203,7 @@ namespace HAYC_Studio
         private int _top = 0;
         private System.Drawing.Size _size = new System.Drawing.Size();
         public BrowserType browserType { get; set; }
+        public double ratio { get; set; } = 0;//默认0
 
         public string ModelName
         {

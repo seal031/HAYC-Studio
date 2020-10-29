@@ -1,0 +1,5 @@
+E:\GitHubProject\HAYC Studio\StudioSetupLibrary\bin\Release\StudioSetupLibrary.dll
+E:\GitHubProject\HAYC Studio\StudioSetupLibrary\bin\Release\StudioSetupLibrary.pdb
+E:\GitHubProject\HAYC Studio\StudioSetupLibrary\obj\Release\StudioSetupLibrary.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\StudioSetupLibrary\obj\Release\StudioSetupLibrary.dll
+E:\GitHubProject\HAYC Studio\StudioSetupLibrary\obj\Release\StudioSetupLibrary.pdb

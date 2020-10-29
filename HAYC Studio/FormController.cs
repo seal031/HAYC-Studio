@@ -9,6 +9,7 @@ namespace HAYC_Studio
     public class FormController
     {
         public static List<FormInfo> formInfoList = new List<FormInfo>();
+        public static SingleMainStudio singleMainStudio;
 
         public static void addForm(int index, string pageName, ScreenForm form)
         {
@@ -70,6 +71,7 @@ namespace HAYC_Studio
                 if (formInfoList.Where(f => f.IsClosed == true).Count() == formInfoList.Count)//如果所有打开的窗体都关闭了，则退出程序
                 {
                     //MessageBox.Show("所有窗体都已关闭，退出程序");
+                    BeepWorker.close();
                     System.Environment.Exit(0);
                 }
             }

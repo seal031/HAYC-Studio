@@ -54,10 +54,11 @@ namespace HAYC_Speech_Service.Voice
             return ret;
         }
 
-        private static IAudioPlayer audioPlayer;
+        //private static IAudioPlayer audioPlayer;
         private static byte[] allData = new byte[] { };
         public static string run_asr(byte[] data)
         {
+            //Debugger.Launch();
             //audioPlayer.Clear();
             //audioPlayer.Play(data);
             string asr_params = "";
@@ -126,6 +127,10 @@ namespace HAYC_Speech_Service.Voice
                 }
                 Thread.Sleep(150); //模拟人说话时间间隙
             }
+            ///////test////
+            //errcode = qisr.QISRAudioWrite(session_id, p, (uint)data.Length, aud_stat, ref ep_status, ref rec_status);
+            ///////test////end/////
+
             //主动点击音频结束
             qisr.QISRAudioWrite(session_id, (IntPtr)0, 0, (int)AS.MSP_AUDIO_SAMPLE_LAST, ref ep_status, ref rec_status);
 
@@ -136,7 +141,7 @@ namespace HAYC_Speech_Service.Voice
             {
                 p = qisr.QISRGetResult(session_id, ref rss_status, 0, ref errcode);
                 rec_rslt = Marshal.PtrToStringAnsi(p);
-                Thread.Sleep(150);
+                Thread.Sleep(50);
             }
             LogHelper.WriteLog("\n识别结束：\n");
             if (null != rec_rslt)
@@ -189,10 +194,14 @@ namespace HAYC_Speech_Service.Voice
         public const string session_begin_params = "sub = iat, domain = iat, language = zh_cn, accent = mandarin, sample_rate = 16000, result_type = plain, result_encoding =gb2312, asr_denoise=1";
         public static int init()
         {
-            audioPlayer = PlayerFactory.CreateAudioPlayer(0, 16000, 1, 16, 200);
-            //56089e95 ha
-            //564d2cdc
-            string login_config = "appid = 5e796958 "; //登录参数写自己创建的语音听写的id 5e4f7a2b
+            //audioPlayer = PlayerFactory.CreateAudioPlayer(0, 16000, 1, 16, 200);
+            string appid = ConfigWorker.GetConfigValue("XunFeiAppId");
+            if (appid == string.Empty)
+            {
+                LogHelper.WriteLog("appid不能设置为空，登录失败");
+                return -1;
+            }
+            string login_config = "appid = " + appid; //登录参数写自己创建的语音听写的id 
             int ret = 0;
             try
             {

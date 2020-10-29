@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>CefSharp.WinForms</id>
+    <version>73.1.130</version>
+    <authors>The CefSharp Authors</authors>
+    <owners>The CefSharp Authors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.github.com/cefsharp/CefSharp/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/cefsharp/cefsharp</projectUrl>
+    <description>The CefSharp Chromium-based browser component (WinForms control).</description>
+    <releaseNotes>See https://github.com/cefsharp/CefSharp/releases/tag/v73.1.130 for release notes including Known Issues, Breaking Changes, Bugs Fixed, new features.
+      Important you read the release notes to see what's changed in this version.</releaseNotes>
+    <copyright>Copyright © The CefSharp Authors</copyright>
+    <tags>winforms chrome browser</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="CefSharp.Common" version="[73.1.130]" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

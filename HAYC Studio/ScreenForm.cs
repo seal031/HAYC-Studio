@@ -17,7 +17,7 @@ namespace HAYC_Studio
 {
     [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
     [ComVisible(true)]//COM+组件可见
-    public partial class ScreenForm : Office2007Form, IForm
+    public partial class ScreenForm : Office2007Form, IForm,IQuartz
     {
         BaseVideoForm videoForm;
         IHaycBrowser wb;
@@ -39,10 +39,14 @@ namespace HAYC_Studio
         public void initWebBrowser(BrowserType browserType, string url)
         {
             wb = BrowserFactory.createBrowser(browserType, this, url);
+            ((WebBrowser)wb).ObjectForScripting = this;
         }
         private void ScreenForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.wb.Dispose();
+            if (this.wb != null)
+            {
+                this.wb.Dispose();
+            }
             FormController.removeForm(this);
         }
 
@@ -55,7 +59,34 @@ namespace HAYC_Studio
         public void CallFunction(string formName, string funcName, params object[] paramList)
         {
             LogHelper.WriteLog("接收到来自页面的调用。被调用窗体：" + formName + " 被调用函数：" + funcName + " 调用参数：" + string.Join(",", paramList));
-            if (funcName == "oppenEventVideo")
+            if (formName == "AlarmLamp")
+            {
+                BeepWorker.open();
+                switch (funcName)
+                {
+                    case "1"://一级，红灯闪烁+蜂鸣器响
+                        Task.Run(() =>
+                        {
+                            BeepWorker.beep(AlarmLampColor.red, needBeep: true);
+                        });
+                        break;
+                    case "2"://二级，黄灯闪烁+蜂鸣器间断响
+                        Task.Run(() =>
+                        {
+                            BeepWorker.beep(AlarmLampColor.yellow, needBeep: true, alternateBeep: true);
+                        });
+                        break;
+                    case "3"://三级，黄灯闪烁
+                        Task.Run(() =>
+                        {
+                            BeepWorker.beep(AlarmLampColor.yellow);
+                        });
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (funcName == "oppenEventVideo")
             {
                 if (videoForm != null)
                 {
@@ -106,6 +137,10 @@ namespace HAYC_Studio
         {
             CallFunction("视频", "", new object[] { 123 });
         }
-        
+
+        public void cyclicWork()
+        {
+           
+        }
     }
 }

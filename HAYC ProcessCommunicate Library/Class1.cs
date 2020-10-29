@@ -65,8 +65,9 @@ namespace HAYC_ProcessCommunicate_Library
         /// 从管道获取消息的事件，配合startGetMessage使用
         /// </summary>
         public event ConnectionMessageEventHandler<string, string> OnServerMessage;
+        public event ConnectionEventHandler<string, string> OnDisConnection;
+        public event PipeExceptionEventHandler OnPipeError;
         NamedPipeClient<string> pipeClient;
-        Thread thread;
         bool isConnected = false;
 
         public PipeCommunicateClient(string pipeName)
@@ -77,6 +78,7 @@ namespace HAYC_ProcessCommunicate_Library
                 pipeClient.AutoReconnect = true;
                 pipeClient.ServerMessage += PipeClient_ServerMessage;
                 pipeClient.Disconnected += PipeClient_Disconnected;
+                pipeClient.Error += PipeClient_Error; 
             }
         }
 
@@ -117,7 +119,12 @@ namespace HAYC_ProcessCommunicate_Library
 
         private void PipeClient_Disconnected(NamedPipeConnection<string, string> connection)
         {
-            //isConnected = false;
+            OnDisConnection(connection);
+        }
+
+        private void PipeClient_Error(Exception exception)
+        {
+            OnPipeError(exception);
         }
 
         private void PipeClient_ServerMessage(NamedPipeConnection<string, string> connection, string message)
@@ -133,6 +140,9 @@ namespace HAYC_ProcessCommunicate_Library
         /// 从管道获取消息的事件，配合startGetMessage使用
         /// </summary>
         public event ConnectionMessageEventHandler<string, string> OnClientMessage;
+        public event ConnectionEventHandler<string, string> OnConnection;
+        public event ConnectionEventHandler<string, string> OnDisConnection;
+        public event PipeExceptionEventHandler OnPipeError;
         bool isConnected = false;
 
         public PipeCommunicateServer(string pipeName)
@@ -143,6 +153,7 @@ namespace HAYC_ProcessCommunicate_Library
                 pipeServer.ClientConnected += PipeServer_ClientConnected;
                 pipeServer.ClientMessage += PipeServer_ClientMessage;
                 pipeServer.Error += PipeServer_Error;
+                pipeServer.ClientDisconnected += PipeServer_ClientDisconnected;
             }
         }
 
@@ -157,17 +168,22 @@ namespace HAYC_ProcessCommunicate_Library
 
         private void PipeServer_Error(Exception exception)
         {
-           
+            OnPipeError(exception);
         }
 
         private void PipeServer_ClientConnected(NamedPipeConnection<string, string> connection)
         {
-            
+            OnConnection(connection);
         }
 
         private void PipeServer_ClientMessage(NamedPipeConnection<string, string> connection, string message)
         {
             OnClientMessage(connection, message);
+        }
+
+        private void PipeServer_ClientDisconnected(NamedPipeConnection<string, string> connection)
+        {
+            OnDisConnection(connection);
         }
 
         public void sendMessage(string message)

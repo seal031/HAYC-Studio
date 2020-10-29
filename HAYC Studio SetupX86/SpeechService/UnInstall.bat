@@ -1,0 +1,1 @@
+.\InstallUtil.exe -u  ".\HAYC Speech Service.exe"

@@ -1,5 +1,5 @@
 ﻿using DevComponents.DotNetBar;
-using HAYC_Studio.LevitatedBall;
+//using HAYC_Studio.LevitatedBall;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +17,12 @@ namespace HAYC_Studio
         ConfigInfoSpeech configInfoSpeech;
         ConfigInfoMain configInfoMain;
         ConfigInfoFace configInfoFace;
-        private LevitateBall miniForm;
+        WindowsServiceManager windowsServerManager;
 
-        public Setup(LevitateBall miniForm)
+        public Setup(WindowsServiceManager windowsServerManager)
         {
             InitializeComponent();
-            this.miniForm = miniForm;
+            this.windowsServerManager = windowsServerManager;
         }
 
         private void stc_SelectedTabChanged(object sender, DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs e)
@@ -56,9 +56,10 @@ namespace HAYC_Studio
                 ii_MicVolumnPickerSleepSecond.Value = configInfoSpeech.MicVolumnPickerSleepSecond;
                 ii_UnKownTimes.Value = configInfoSpeech.UnKownTimes;
 
-                if (miniForm != null)
+                if (windowsServerManager != null)
                 {
                     timer_speech_state.Enabled = true;
+                    timer_faceSpeech_state.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -71,7 +72,12 @@ namespace HAYC_Studio
         {
             try
             {
-                timer_speech_state.Enabled = false;
+                configInfoMain = ConfigInfoMain.LoadConfig();
+                if (windowsServerManager != null)
+                {
+                    timer_speech_state.Enabled = false;
+                    timer_faceSpeech_state.Enabled = false;
+                }
             }
             catch (Exception ex) 
             {
@@ -83,7 +89,12 @@ namespace HAYC_Studio
         {
             try
             {
-                timer_speech_state.Enabled = false;
+                configInfoFace = ConfigInfoFace.LoadConfig();
+                if (windowsServerManager != null)
+                {
+                    timer_speech_state.Enabled = false;
+                    timer_faceSpeech_state.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
@@ -103,7 +114,33 @@ namespace HAYC_Studio
                 configInfoSpeech.UnKownTimes = ii_UnKownTimes.Value;
                 ConfigInfoSpeech.SaveConfig(configInfoSpeech);
                 MessageBox.Show("保存成功");
-                PipeCommunicateServerWorker.sendSetting(configInfoSpeech);
+                SpeechPipeCommunicateServerWorker.sendSetting(configInfoSpeech);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btn_common_ok_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                configInfoMain.hostUrl = txt_hostUrl.Text.Trim();
+                ConfigInfoMain.SaveConfig(configInfoMain);
+                MessageBox.Show("保存成功");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btn_faceDetect_ok_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                configInfoFace.faceDetectAutoStart=sb_faceDetect.Value ? 1 : 0;
+                ConfigInfoFace.SaveConfig(configInfoFace);
+                MessageBox.Show("保存成功");
             }
             catch (Exception ex)
             {
@@ -123,30 +160,64 @@ namespace HAYC_Studio
 
         private void sb_speechState_ValueChanged(object sender, EventArgs e)
         {
-            var value = sb_speechState.Value;
-            if (value) //true时停止，false启动
+            try
             {
-                miniForm.windowsServerManager.StopService("HAYC Speech Service");
+                var value = sb_speechState.Value;
+                if (value) //true时停止，false启动
+                {
+                    windowsServerManager.StopService("HAYC Speech Service");
+                }
+                else
+                {
+                    windowsServerManager.StartService("HAYC Speech Service");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                miniForm.windowsServerManager.StartService("HAYC Speech Service");
+                MessageBox.Show(ex.Message, "服务状态异常", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
         private void timer_speech_state_Tick(object sender, EventArgs e)
         {
-            var speechServiceState = miniForm.windowsServerManager.ServiceIsRunning("HAYC Speech Service");
-            sb_speechState.Value = !speechServiceState;
-            if (speechServiceState)
+            try
             {
-                lbl_speech_state.Text = "运行中";
-                lbl_speech_state.ForeColor = Color.Green;
+                var speechServiceState = windowsServerManager.ServiceIsRunning("HAYC Speech Service");
+                sb_speechState.Value = !speechServiceState;
+                if (speechServiceState)
+                {
+                    lbl_speech_state.Text = "运行中";
+                    lbl_speech_state.ForeColor = Color.Green;
+                }
+                else
+                {
+                    lbl_speech_state.Text = "已停止";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lbl_speech_state.Text = "已停止";
+                lbl_speech_state.Text = ex.Message;
                 lbl_speech_state.ForeColor = Color.Red;
+            }
+            try
+            {
+                var faceDetectServiceState = windowsServerManager.ServiceIsRunning("HAYC FaceDetect Service");
+                sb_faceDetect.Value = !faceDetectServiceState;
+                if (faceDetectServiceState)
+                {
+                    lbl_faceDetect_state.Text = "运行中";
+                    lbl_faceDetect_state.ForeColor = Color.Green;
+                }
+                else
+                {
+                    lbl_faceDetect_state.Text = "已停止";
+                    lbl_faceDetect_state.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                lbl_faceDetect_state.Text = ex.Message;
+                lbl_faceDetect_state.ForeColor = Color.Red;
             }
         }
 

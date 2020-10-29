@@ -1,0 +1,239 @@
+﻿正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+没有 RunInstallerAttribute.Yes 的公共安装程序。在 E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe 程序集中应该可以找到“Yes”特性。
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+没有 RunInstallerAttribute.Yes 的公共安装程序。在 E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe 程序集中应该可以找到“Yes”特性。
+没有安装程序，因此移除 InstallState 文件。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+已成功安装服务 HAYC FaceDetect Service。
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在卸载程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在移除 EventLog 源 HAYC FaceDetect Service。
+正在从系统中移除服务 HAYC FaceDetect Service...
+已成功地从系统中移除服务 HAYC FaceDetect Service。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在回滚程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在将事件日志还原到源 HAYC FaceDetect Service 的前一状态。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在回滚程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在将事件日志还原到源 HAYC FaceDetect Service 的前一状态。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在回滚程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在将事件日志还原到源 HAYC FaceDetect Service 的前一状态。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+已成功安装服务 HAYC FaceDetect Service。
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在卸载程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在移除 EventLog 源 HAYC FaceDetect Service。
+正在从系统中移除服务 HAYC FaceDetect Service...
+已成功地从系统中移除服务 HAYC FaceDetect Service。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+已成功安装服务 HAYC FaceDetect Service。
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在卸载程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在移除 EventLog 源 HAYC FaceDetect Service。
+正在从系统中移除服务 HAYC FaceDetect Service...
+已成功地从系统中移除服务 HAYC FaceDetect Service。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+已成功安装服务 HAYC FaceDetect Service。
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在卸载程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在移除 EventLog 源 HAYC FaceDetect Service。
+正在从系统中移除服务 HAYC FaceDetect Service...
+已成功地从系统中移除服务 HAYC FaceDetect Service。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+已成功安装服务 HAYC FaceDetect Service。
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在卸载程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在移除 EventLog 源 HAYC FaceDetect Service。
+正在从系统中移除服务 HAYC FaceDetect Service...
+已成功地从系统中移除服务 HAYC FaceDetect Service。
+正在卸载程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在移除 EventLog 源 HAYC FaceDetect Service。
+正在从系统中移除服务 HAYC FaceDetect Service...
+已成功地从系统中移除服务 HAYC FaceDetect Service。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在回滚程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在将事件日志还原到源 HAYC FaceDetect Service 的前一状态。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在回滚程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在将事件日志还原到源 HAYC FaceDetect Service 的前一状态。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在回滚程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在将事件日志还原到源 HAYC FaceDetect Service 的前一状态。
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+已成功安装服务 HAYC FaceDetect Service。
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在安装服务 HAYC FaceDetect Service...
+已成功安装服务 HAYC FaceDetect Service。
+正在日志 Application 中创建 EventLog 源 HAYC FaceDetect Service...
+正在提交程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在卸载程序集“E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe”。
+受影响的参数是:
+   logtoconsole = 
+   assemblypath = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.exe
+   logfile = E:\GitHubProject\HAYC Studio\HAYC FaceDetect Service\bin\x64\Debug\HAYC FaceDetect Service.InstallLog
+正在移除 EventLog 源 HAYC FaceDetect Service。
+正在从系统中移除服务 HAYC FaceDetect Service...
+已成功地从系统中移除服务 HAYC FaceDetect Service。
+尝试停止服务 HAYC FaceDetect Service。

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Autofac</id>
+    <version>4.9.3</version>
+    <authors>Autofac Contributors</authors>
+    <owners>Autofac Contributors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://autofac.org/</projectUrl>
+    <iconUrl>https://cloud.githubusercontent.com/assets/1156571/13684110/16b8f152-e6bf-11e5-84ae-22c66c6d351a.png</iconUrl>
+    <description>Autofac is an IoC container for Microsoft .NET. It manages the dependencies between classes so that applications stay easy to change as they grow in size and complexity.</description>
+    <releaseNotes>Release notes are at https://github.com/autofac/Autofac/releases</releaseNotes>
+    <tags>autofac di ioc dependencyinjection</tags>
+    <repository type="git" url="https://github.com/autofac/Autofac" commit="3f63eb7b5c664f3952c36e925c94478c91ee10a6" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETStandard1.1">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel" version="4.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

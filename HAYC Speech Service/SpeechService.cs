@@ -1,21 +1,11 @@
 ﻿using HAYC_ProcessCommunicate_Library;
-using HAYC_Speech_Service.Voice;
 using NamedPipeWrapper;
 using Quartz;
 using Quartz.Impl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.IO;
-using System.IO.Pipes;
-using System.Linq;
 using System.ServiceProcess;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HAYC_Speech_Service
 {
@@ -26,6 +16,7 @@ namespace HAYC_Speech_Service
         PipeCommunicateClient pipeClient;
         SpeechWorker speechWorker;
         Thread threadforwork;
+        Thread threadforSocket;
 
         IScheduler scheduler;
         IJobDetail job;
@@ -34,19 +25,67 @@ namespace HAYC_Speech_Service
         {
             InitializeComponent();
         }
-
         private void workFunction()
         {
+            //Debugger.Launch();
             LogHelper.setConsole(0);
             //LogHelper.WriteLog("开始执行workFunction");
             //LogHelper.WriteLog(System.Windows.Forms.Application.StartupPath);
             pipeClient = new PipeCommunicateClient(pipeName);
             pipeClient.OnServerMessage += PipeClient_OnServerMessage;
-            speechWorker = new SpeechWorker(pipeClient);
+            speechWorker = new SpeechWorker(pipeClient,this);
 
             pipeClient.startClient();
             startJob();
-            speechWorker.startPick();
+            speechWorker.startPick(); 
+        }
+        private void socketFunction()
+        {
+            try
+            {
+                SocketServer.init();
+                SocketServer.server.NewSessionConnected += Server_NewSessionConnected;
+                SocketServer.server.NewRequestReceived += Server_NewRequestReceived;
+                SocketServer.server.SessionClosed += Server_SessionClosed;
+                SocketServer.start();
+                LogHelper.WriteLog("socket初始化及启动成功");
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog("socket初始化及启动异常：" + ex.Message);
+            }
+        }
+
+        private void Server_SessionClosed(SuperSocket.SocketBase.AppSession session, SuperSocket.SocketBase.CloseReason value)
+        {
+            LogHelper.WriteLog("由"+session.RemoteEndPoint.Port+ "端口连入的socket客户端已经断开连接：");
+        }
+
+        private void Server_NewRequestReceived(SuperSocket.SocketBase.AppSession session, SuperSocket.SocketBase.Protocol.StringRequestInfo requestInfo)
+        {
+            LogHelper.WriteLog("收到由"+session.RemoteEndPoint.Port+"端口连入的socket客户端发来的消息"+requestInfo.Key);
+            dealSocketCommand(requestInfo.Key);
+        }
+
+        private void Server_NewSessionConnected(SuperSocket.SocketBase.AppSession session)
+        {
+            LogHelper.WriteLog("由" + session.RemoteEndPoint.Port + "端口连入的socket客户端已经连接成功：");
+            SocketServer.session = session;//连接后，将session对象赋给SocketServer的静态session对象
+        }
+
+        private void stopSocket()
+        {
+            try
+            {
+                SocketServer.stop();
+                SocketServer.session = null;
+                SocketServer.server.Dispose();
+                SocketServer.server = null;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog("清理socket发生异常："+ex.Message);
+            }
         }
 
         protected override void OnStart(string[] args)
@@ -58,6 +97,12 @@ namespace HAYC_Speech_Service
             }
             threadforwork.IsBackground = true;
             threadforwork.Start();
+            //if (threadforSocket == null)
+            //{
+            //    threadforSocket = new Thread(socketFunction);
+            //}
+            //threadforSocket.IsBackground = true;
+            //threadforSocket.Start();
         }
 
         protected override void OnStop()
@@ -71,7 +116,15 @@ namespace HAYC_Speech_Service
                     threadforwork.Abort();
                 }
             }
+            if (threadforSocket != null)
+            {
+                if (threadforSocket.ThreadState == System.Threading.ThreadState.Running)
+                {
+                    threadforSocket.Abort();
+                }
+            }
             stopJob();
+            stopSocket();
             speechWorker.dispose();
             speechWorker = null;
             pipeClient.stopClient();
@@ -179,6 +232,51 @@ namespace HAYC_Speech_Service
             else
             {
                 LogHelper.WriteLog("设置内容无效。设置消息内容为：" + messageEntity.Message);
+            }
+        }
+        /// <summary>
+        /// 处理socket消息
+        /// </summary>
+        /// <param name="body"></param>
+        private void dealSocketCommand(string body)
+        {
+            ProcessCommunicateMessage messageEntity = ProcessCommunicateMessage.fromJson(body);
+            if (messageEntity == null)
+            {
+                LogHelper.WriteLog("收到socket消息：" + body + "。反序列化失败");
+            }
+            else
+            {
+                switch (messageEntity.MessageType)
+                {
+                    case CommunicateMessageType.COMMAND:
+                        dealCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.SCORE://请求计算人脸对比得分
+                        dealScoreCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.FEAT://请求计算人脸特征码
+                        dealFeatCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.START://请求开始识别
+                        dealStartCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.STOP://请求停止识别
+                        dealStopCommand(messageEntity);
+                        break;
+                    case CommunicateMessageType.SPEECHRESULT://语音识别结果
+                        dealSpeechResult(messageEntity);
+                        break;
+                    case CommunicateMessageType.MESSAGE://普通文本消息
+                        dealMessage(messageEntity);
+                        break;
+                    case CommunicateMessageType.SETTING://设置信息
+                        dealSetting(messageEntity);
+                        break;
+                    default:
+                        LogHelper.WriteLog("未指定的消息类型");
+                        break;
+                }
             }
         }
 

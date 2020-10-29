@@ -13,6 +13,7 @@ public class Speaker
     AxWindowsMediaPlayer player;
     PipeCommunicateServer pipeServer;
     Dictionary<string, string> messageSoundDic = new Dictionary<string, string>();
+    public CountdownEvent ce;
 
     public Speaker(AxWindowsMediaPlayer _player, PipeCommunicateServer _pipeServer)
     {
@@ -26,6 +27,7 @@ public class Speaker
 
     private void Player_PlayStateChange(object sender, _WMPOCXEvents_PlayStateChangeEvent e)
     {
+        //Console.WriteLine("player状态是"+e.newState);
         if (e.newState == 8)
         {
             ProcessCommunicateMessage message = new ProcessCommunicateMessage();
@@ -34,6 +36,7 @@ public class Speaker
             message.Message = "";
             pipeServer.sendMessage(message.toJson());
             Console.WriteLine("发送" + message.toJson());
+            ce.Signal();
         }
     }
 

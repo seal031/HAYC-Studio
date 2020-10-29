@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>NiWrapper.Net.x86</id>
+    <version>2.2.0.34</version>
+    <title>NiWrapper.Net x86</title>
+    <authors>Soroush Falahati</authors>
+    <owners>Soroush Falahati</owners>
+    <licenseUrl>https://github.com/falahati/NiWrapper.Net/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/falahati/NiWrapper.Net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.Net Wrapper for OpenNI 2</description>
+    <dependencies>
+      <dependency id="Baseclass.Contrib.Nuget.Output" version="1.0.7" />
+    </dependencies>
+  </metadata>
+</package>

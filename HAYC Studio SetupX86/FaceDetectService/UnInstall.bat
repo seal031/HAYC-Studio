@@ -1,0 +1,1 @@
+.\InstallUtil.exe -u  ".\HAYC FaceDetect Service.exe"

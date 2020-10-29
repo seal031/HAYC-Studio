@@ -9,14 +9,14 @@ namespace HAYC_FaceDetect_Service
 {
     public class VyFaceDLL
     {
-        [DllImport("E:\\FaceSDK_CSharp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "?face_sdk_init@@YAHPBD@Z")]
+        [DllImport("FaceSDK_CSharp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "?face_sdk_init@@YAHPBD@Z")]
         public static extern int face_sdk_init(string filePath);
 
-        [DllImport("E:\\FaceSDK_CSharp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "?face_sdk_extract@@YAHPBDPAD@Z")]
+        [DllImport("FaceSDK_CSharp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "?face_sdk_extract@@YAHPBDPAD@Z")]
         public static extern int face_sdk_extract(string imagePath, ref byte featcode);
         //public static extern int face_sdk_extract(string imagePath, [MarshalAs(UnmanagedType.LPStr)]StringBuilder featcode);
 
-        [DllImport("E:\\FaceSDK_CSharp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "?face_sdk_compare@@YAMPAD0H@Z")]
+        [DllImport("FaceSDK_CSharp.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, EntryPoint = "?face_sdk_compare@@YAMPAD0H@Z")]
         public static extern float face_sdk_compare(ref byte f1, ref byte f2, int codelen);
 
 

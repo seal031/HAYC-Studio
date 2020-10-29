@@ -9,7 +9,31 @@ namespace HAYC_Studio
 {
     public class ConfigInfoMain
     {
-        
+        public string hostUrl { get; set; }
+        public static ConfigInfoMain LoadConfig()
+        {
+            try
+            {
+                ConfigInfoMain config = new ConfigInfoMain();
+                config.hostUrl = ConfigWorker.GetConfigValue("hostUrl");
+                return config;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("加载配置出现异常：" + ex.Message);
+            }
+        }
+        public static void SaveConfig(ConfigInfoMain config)
+        {
+            try
+            {
+                ConfigWorker.SetConfigValue("hostUrl", config.hostUrl);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("保存配置出现异常：" + ex.Message);
+            }
+        }
     }
 
     /// <summary>
@@ -57,13 +81,37 @@ namespace HAYC_Studio
             }
             catch (Exception ex)
             {
-                throw new Exception("保持配置出现异常："+ex.Message);
+                throw new Exception("保存配置出现异常：" + ex.Message);
             }
         }
     }
 
     public class ConfigInfoFace
     {
-
+        public int faceDetectAutoStart { get; set; }
+        public static ConfigInfoFace LoadConfig()
+        {
+            try
+            {
+                ConfigInfoFace config = new ConfigInfoFace();
+                config.faceDetectAutoStart = int.Parse(ConfigWorker.GetConfigValue("faceDetectAutoStart"));
+                return config;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("加载配置出现异常：" + ex.Message);
+            }
+        }
+        public static void SaveConfig(ConfigInfoFace config)
+        {
+            try
+            {
+                ConfigWorker.SetConfigValue("faceDetectAutoStart", config.faceDetectAutoStart.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("保存配置出现异常：" + ex.Message);
+            }
+        }
     }
 }

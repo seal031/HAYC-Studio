@@ -25,3 +25,26 @@ public class LogHelper
         }
     }
 }
+
+public class TranscateHelper
+{
+    public static byte[] stringToBytes(string inputStr, string splitStr)
+    {
+        string[] inputArray = inputStr.Split(new string[] { splitStr }, StringSplitOptions.RemoveEmptyEntries);
+        byte[] returnByteArray = new byte[inputArray.Length];
+        for (int i=0;i<inputArray.Length;i++)
+        {
+            string s = inputArray[i];
+            byte b;
+            if (byte.TryParse(s, out b))
+            {
+                returnByteArray[i] = b;
+            }
+            else
+            {
+                throw new Exception("输入的字符串无法转为数字");
+            }
+        }
+        return returnByteArray;
+    }
+}

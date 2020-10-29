@@ -37,7 +37,7 @@ namespace HAYC_Speech_Service
         #endregion
 
         #region 进程交互相关参数
-        public string processName = "系统登录";
+        public string processName = "语音识别服务";
         //CommunicateWorker communicateWorker;
         public PipeCommunicateClient communicateWorker;
 
@@ -58,22 +58,29 @@ namespace HAYC_Speech_Service
                     LogHelper.WriteLog("*********开始休眠*************");
                     ProcessCommunicateMessage message = new ProcessCommunicateMessage() { MessageType = CommunicateMessageType.SPEECHRESULT, ProcessName = processName, Message = "开始休眠" };
                     communicateWorker.sendMessage(message.toJson());
+                    sendResultBySocket(message.toJson());
                 }
             }
         }
         #endregion
 
-        public SpeechWorker(PipeCommunicateClient _communicateWorker)
+        public SpeechWorker(PipeCommunicateClient _communicateWorker, SpeechService _speechService)
         {
             communicateWorker = _communicateWorker;
-            AsrWoker.init();
-            MicVolumnPicker.init();
-            Speaker.init(this);
-            wie.WaveFormat = new WaveFormat(16000,16,1);
-            useLocalSetting();
-            wie.DeviceNumber = MicVolumnPicker.getRespeakerIndexByWaveInEvent();
-            wie.DataAvailable += Wie_DataAvailable;
-            wie.RecordingStopped += Wie_RecordingStopped;
+            if (MicVolumnPicker.init())
+            {
+                AsrWoker.init();
+                Speaker.init(this);
+                wie.WaveFormat = new WaveFormat(16000, 16, 1);
+                useLocalSetting();
+                wie.DeviceNumber = MicVolumnPicker.getRespeakerIndexByWaveInEvent();
+                wie.DataAvailable += Wie_DataAvailable;
+                wie.RecordingStopped += Wie_RecordingStopped;
+            }
+            else
+            {
+                _speechService.Stop();
+            }
         }
 
         public void useLocalSetting()
@@ -205,6 +212,7 @@ namespace HAYC_Speech_Service
                         Speaker.speech(Speaker.TextOnWake);
                         ProcessCommunicateMessage message = new ProcessCommunicateMessage() { MessageType = CommunicateMessageType.SPEECHRESULT, ProcessName = processName, Message = result };
                         communicateWorker.sendMessage(message.toJson());
+                        sendResultBySocket(message.toJson());
                     }
                     else//如果为其他指令
                     {
@@ -213,12 +221,14 @@ namespace HAYC_Speech_Service
                             Speaker.speech(Speaker.TextOnCommand);
                             ProcessCommunicateMessage message = new ProcessCommunicateMessage() { MessageType = CommunicateMessageType.SPEECHRESULT, ProcessName = processName, Message = result };
                             communicateWorker.sendMessage(message.toJson());
+                            sendResultBySocket(message.toJson());
                         }
                         else
                         {
                             //如果在睡眠状态下识别到其他指令，则发聩空字符串，接收者什么都不做
                             ProcessCommunicateMessage message = new ProcessCommunicateMessage() { MessageType = CommunicateMessageType.SPEECHRESULT, ProcessName = processName, Message = string.Empty };
                             communicateWorker.sendMessage(message.toJson());
+                            sendResultBySocket(message.toJson());
                         }
                     }
                 }
@@ -236,16 +246,34 @@ namespace HAYC_Speech_Service
                         {
                             ProcessCommunicateMessage message = new ProcessCommunicateMessage() { MessageType = CommunicateMessageType.SPEECHRESULT, ProcessName = processName, Message = "未能识别命令"};
                             communicateWorker.sendMessage(message.toJson());
+                            sendResultBySocket(message.toJson());
                         }
                     }
                     else//如果在睡眠状态下识别不出指令，则发聩空字符串，接收者什么都不做
                     {
                         ProcessCommunicateMessage message = new ProcessCommunicateMessage() { MessageType = CommunicateMessageType.SPEECHRESULT, ProcessName = processName, Message = string.Empty };
                         communicateWorker.sendMessage(message.toJson());
+                        sendResultBySocket(message.toJson());
                     }
                 }
             }
             IsPicking = false;
+        }
+
+        /// <summary>
+        /// 通过socket发送识别结果
+        /// </summary>
+        /// <param name="message"></param>
+        private static void sendResultBySocket(string message)
+        {
+            try
+            {
+                SocketServer.send(message);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog("发送socket数据异常" + ex.Message);
+            }
         }
 
         private string getResultFromXml(string strXml)

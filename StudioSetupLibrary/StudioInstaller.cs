@@ -31,20 +31,11 @@ namespace StudioSetupLibrary
                 path = path.Replace(@"\\", @"\");
                 LogWrite(path);
                 //System.Diagnostics.Process.Start(path);
-                using (Process proc = new Process())
-                {
-                    string command = path;
-                    proc.StartInfo.FileName = command;
-                    proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(command);
-
-                    //run as admin
-                    proc.StartInfo.Verb = "runas";
-                    proc.Start();
-                    while (!proc.HasExited)
-                    {
-                        proc.WaitForExit(3000);
-                    }
-                }
+                RunBat(path);
+                path= setupPath + @"FaceDetectService\install.bat";
+                path = path.Replace(@"\\", @"\");
+                LogWrite(path);
+                RunBat(path);
             }
             catch (Exception ex)
             {
@@ -63,26 +54,34 @@ namespace StudioSetupLibrary
                 string path = setupPath + @"SpeechService\uninstall.bat";
                 path = path.Replace(@"\\", @"\");
                 //System.Diagnostics.Process.Start(path);
-                using (Process proc = new Process())
-                {
-                    string command = path;
-                    proc.StartInfo.FileName = command;
-                    proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(command);
-
-                    //run as admin
-                    proc.StartInfo.Verb = "runas";
-                    proc.Start();
-                    while (!proc.HasExited)
-                    {
-                        proc.WaitForExit(3000);
-                    }
-                }
+                RunBat(path);
+                path=setupPath+ @"FaceDetectService\uninstall.bat";
+                path= path.Replace(@"\\", @"\");
+                RunBat(path);
             }
             catch (Exception ex)
             {
                 LogWrite(ex.Message);
             }
             base.OnAfterUninstall(savedState);
+        }
+
+        public void RunBat(string path)
+        {
+            using (Process proc = new Process())
+            {
+                string command = path;
+                proc.StartInfo.FileName = command;
+                proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(command);
+
+                //run as admin
+                proc.StartInfo.Verb = "runas";
+                proc.Start();
+                while (!proc.HasExited)
+                {
+                    proc.WaitForExit(3000);
+                }
+            }
         }
 
         public void LogWrite(string str)

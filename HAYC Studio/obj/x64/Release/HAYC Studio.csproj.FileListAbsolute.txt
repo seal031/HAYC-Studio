@@ -1,0 +1,4 @@
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Release\Smart安全智能终端.exe.config
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Release\Interop.WMPLib.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Release\AxInterop.WMPLib.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Release\HAYC Studio.csproj.ResolveComReference.cache

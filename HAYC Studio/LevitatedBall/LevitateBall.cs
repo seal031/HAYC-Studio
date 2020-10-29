@@ -146,8 +146,8 @@ namespace HAYC_Studio.LevitatedBall
         }
         private void setup_Click(object sender, EventArgs e)
         {
-            Setup setupForm = new Setup(this);
-            setupForm.Show();
+            //Setup setupForm = new Setup(this);
+            //setupForm.Show();
         }
 
         /*显示或隐藏所有窗口*/

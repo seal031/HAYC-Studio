@@ -1,3 +1,26 @@
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\chrome_elf.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\libcef.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.Core.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.WinForms.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Smart安全智能终端.exe.config
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\Interop.WMPLib.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\AxInterop.WMPLib.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC Studio.csproj.ResolveComReference.cache
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC Studio.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.MessageForm.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.BigForm.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.LevitateBall.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.MainBallControl.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LoginForm.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.MainStudio.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.Properties.Resources.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.ScreenForm.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.Setup.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.SingleMainStudio.resources
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC Studio.csproj.GenerateResource.Cache
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\Smart安全智能终端.exe
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\Smart安全智能终端.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\librdkafka\x86\librdkafka.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\librdkafka\x86\librdkafkacpp.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\librdkafka\x86\libzstd.dll
@@ -14,11 +37,9 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\cef.pak
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\cef_100_percent.pak
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\cef_200_percent.pak
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\cef_extensions.pak
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\chrome_elf.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\d3dcompiler_47.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\devtools_resources.pak
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\icudtl.dat
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\libcef.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\libEGL.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\libGLESv2.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\locales\am.pak
@@ -84,16 +105,12 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.BrowserSubproces
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.BrowserSubprocess.Core.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.BrowserSubprocess.exe
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.BrowserSubprocess.pdb
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.Core.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.Core.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.Core.xml
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.XML
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.WinForms.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.WinForms.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\CefSharp.WinForms.XML
-E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Smart安全智能终端.exe.config
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Smart安全智能终端.exe
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Smart安全智能终端.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Autofac.dll
@@ -112,6 +129,8 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Quartz.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\System.Buffers.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\System.Memory.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\SuperSocket.SocketBase.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\SuperSocket.Common.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\HAYC Message.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\HAYC ProcessCommunicate Library.pdb
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Autofac.pdb
@@ -131,21 +150,25 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Quartz.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\System.Buffers.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\System.Memory.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\SuperSocket.SocketBase.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\SuperSocket.Common.xml
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\Interop.WMPLib.dll
 E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\AxInterop.WMPLib.dll
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC Studio.csprojResolveAssemblyReference.cache
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\Interop.WMPLib.dll
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\AxInterop.WMPLib.dll
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC Studio.csproj.ResolveComReference.cache
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.MessageForm.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.BigForm.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.LevitateBall.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LevitatedBall.MainBallControl.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.LoginForm.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.MainStudio.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.Properties.Resources.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.ScreenForm.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.Setup.resources
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC Studio.csproj.GenerateResource.Cache
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\Smart安全智能终端.exe
-E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\Smart安全智能终端.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\dll\x86\OpenCvSharpExtern.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\dll\x86\opencv_ffmpeg400.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\dll\x64\OpenCvSharpExtern.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\dll\x64\opencv_ffmpeg400_64.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\NiWrapper.Net.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.Blob.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.Extensions.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.UserInterface.dll
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.Blob.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.Blob.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.Extensions.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.Extensions.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.UserInterface.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x64\Debug\OpenCvSharp.UserInterface.xml
+E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x64\Debug\HAYC_Studio.FaceRegist.resources

@@ -1,0 +1,11 @@
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\bin\Debug\AngularCallWinformTest.exe.config
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\bin\Debug\AngularCallWinformTest.exe
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\bin\Debug\AngularCallWinformTest.pdb
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\obj\Debug\AngularCallWinformTest.Form1.resources
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\obj\Debug\AngularCallWinformTest.Properties.Resources.resources
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\obj\Debug\AngularCallWinformTest.csproj.GenerateResource.Cache
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\obj\Debug\AngularCallWinformTest.exe
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\obj\Debug\AngularCallWinformTest.pdb
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\bin\Debug\DevComponents.DotNetBar2.dll
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\bin\Debug\DevComponents.DotNetBar2.xml
+E:\GitHubProject\HAYC Studio\AngularCallWinformTest\obj\Debug\AngularCallWinformTest.csprojResolveAssemblyReference.cache

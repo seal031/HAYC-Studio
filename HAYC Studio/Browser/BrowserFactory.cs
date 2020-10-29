@@ -89,7 +89,34 @@ namespace HAYC_Studio.Browser
 
         public void CallJsFunction(string functionName, object[] paramList)
         {
-            if (functionName == string.Empty)//北京新机场，新框架页面无法直接调用js，需要执行下面语句
+            if (functionName == "AlarmLamp")
+            {
+                BeepWorker.open();
+                switch (functionName)
+                {
+                    case "1"://一级，红灯闪烁+蜂鸣器响
+                        Task.Run(() =>
+                        {
+                            BeepWorker.beep(AlarmLampColor.red, needBeep: true);
+                        });
+                        break;
+                    case "2"://二级，黄灯闪烁+蜂鸣器间断响
+                        Task.Run(() =>
+                        {
+                            BeepWorker.beep(AlarmLampColor.yellow, needBeep: true, alternateBeep: true);
+                        });
+                        break;
+                    case "3"://三级，黄灯闪烁
+                        Task.Run(() =>
+                        {
+                            BeepWorker.beep(AlarmLampColor.yellow);
+                        });
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (functionName == string.Empty)//北京新机场，新框架页面无法直接调用js，需要执行下面语句
             {
                 string jsCode = "window.angularComponent.zone.run(function() { window.angularComponent.component.calledFromOutside(JSON.stringify(" + paramList[0] + "))})";
                 DoJavaScriptCode(jsCode);

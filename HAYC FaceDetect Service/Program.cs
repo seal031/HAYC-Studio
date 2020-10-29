@@ -17,15 +17,16 @@ namespace HAYC_FaceDetect_Service
         /// </summary>
         static void Main()
         {
-            //ServiceBase[] ServicesToRun;
-            //ServicesToRun = new ServiceBase[]
-            //{
-            //    new FaceDetectService()
-            //};
-            //ServiceBase.Run(ServicesToRun);
+            ///属性：AnyCpu，首选32位
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[]
+            {
+                new FaceDetectService()
+            };
+            ServiceBase.Run(ServicesToRun);
 
-            FaceDetectService service = new FaceDetectService();
-            service.OnStart();
+            //FaceDetectService service = new FaceDetectService();
+            //service.OnStart();
         }
     }
 }

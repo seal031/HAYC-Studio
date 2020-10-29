@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        function showMsg(msg) {
+            alert(msg);
+        }
+        window.onload = function () {
+            document.getElementById("btn").onclick = function () {
+                //var response = window.external.CallFunction("1", "2", "3", "4");
+                var response = window.external.Test("1", "2", "3", "4");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="call" id="btn" />
+</body>
+</html>

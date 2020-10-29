@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>fastJSON</id>
+    <version>2.3.1</version>
+    <title>fastJSON</title>
+    <authors>mgholam</authors>
+    <owners>mgholam</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://www.codeproject.com/Articles/159450/fastJSON</projectUrl>
+    <description>smallest, fastest polymorphic JSON serializer</description>
+  </metadata>
+</package>

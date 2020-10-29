@@ -61,19 +61,32 @@ namespace HAYC_Studio
         public string resultCode { get; set; }
         public string data { get; set; }
 
+
+
         public class DataItem
         {
-            public string browserTypeCode { get; set; }
-            public string browserTypeName { get; set; }
-            public string createBy { get; set; }
-            public long createDate { get; set; }
-            public int displayIndex { get; set; }
-            public string roleId { get; set; }
-            public string roleName { get; set; }
-            public string screenName { get; set; }
-            public string screenNames { get; set; }
-            public string screenUrl { get; set; }
-            public string uuid { get; set; }
+            public DataItem()
+            {
+                sceneInfo = new List<SceneItem>();
+            }
+            public string sceneName { get; set; }
+            public List<SceneItem> sceneInfo { get; set; }
+            public class SceneItem
+            {
+                public string browserTypeCode { get; set; }
+                public string browserTypeName { get; set; }
+                public string createBy { get; set; }
+                public long? createDate { get; set; }
+                public int displayIndex { get; set; }
+                public string roleId { get; set; }
+                public string roleName { get; set; }
+                public string sceneName { get; set; }
+                public string screenName { get; set; }
+                public string screenNames { get; set; }
+                public string screenRatio { get; set; }
+                public string screenUrl { get; set; }
+                public string uuid { get; set; }
+            }
         }
 
         public string toJson()

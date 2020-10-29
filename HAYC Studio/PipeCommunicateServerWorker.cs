@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace HAYC_Studio
 {
-    public class PipeCommunicateServerWorker
+    public class SpeechPipeCommunicateServerWorker
     {
         static PipeCommunicateServer server;
-        public PipeCommunicateServerWorker(PipeCommunicateServer server)
+        public SpeechPipeCommunicateServerWorker(PipeCommunicateServer server)
         {
-            PipeCommunicateServerWorker.server = server;
+            SpeechPipeCommunicateServerWorker.server = server;
         }
 
         public static void sendMessage(string message)
@@ -35,6 +35,20 @@ namespace HAYC_Studio
             pcm.Message = setting.toJson();
             var message = pcm.toJson();
             sendMessage(message);
+        }
+    }
+
+    public class FacePipeCommunicateServerWorker
+    {
+        static PipeCommunicateServer server;
+        public FacePipeCommunicateServerWorker(PipeCommunicateServer server)
+        {
+            FacePipeCommunicateServerWorker.server = server;
+        }
+
+        public static void sendMessage(string message)
+        {
+            server.sendMessage(message);
         }
     }
 }

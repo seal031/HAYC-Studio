@@ -30,6 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.stc = new DevComponents.DotNetBar.SuperTabControl();
+            this.stcp_common = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.btn_common_cancel = new DevComponents.DotNetBar.ButtonX();
+            this.btn_common_ok = new DevComponents.DotNetBar.ButtonX();
+            this.txt_hostUrl = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label13 = new System.Windows.Forms.Label();
+            this.sti_common = new DevComponents.DotNetBar.SuperTabItem();
+            this.stcp_face = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.btn_faceDecect_cancel = new DevComponents.DotNetBar.ButtonX();
+            this.btn_faceDetect_ok = new DevComponents.DotNetBar.ButtonX();
+            this.lbl_faceDetect_state = new System.Windows.Forms.Label();
+            this.switchButton3 = new DevComponents.DotNetBar.Controls.SwitchButton();
+            this.sb_faceDetect = new DevComponents.DotNetBar.Controls.SwitchButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.sti_face = new DevComponents.DotNetBar.SuperTabItem();
             this.stcp_speech = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.lbl_speech_state = new System.Windows.Forms.Label();
             this.sb_speechState = new DevComponents.DotNetBar.Controls.SwitchButton();
@@ -52,28 +67,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.kc_micSensitivity = new DevComponents.Instrumentation.KnobControl();
             this.sti_speech = new DevComponents.DotNetBar.SuperTabItem();
-            this.stcp_common = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.sti_common = new DevComponents.DotNetBar.SuperTabItem();
-            this.stcp_face = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.switchButton3 = new DevComponents.DotNetBar.Controls.SwitchButton();
-            this.switchButton4 = new DevComponents.DotNetBar.Controls.SwitchButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.sti_face = new DevComponents.DotNetBar.SuperTabItem();
             this.timer_speech_state = new System.Windows.Forms.Timer(this.components);
+            this.timer_faceSpeech_state = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.stc)).BeginInit();
             this.stc.SuspendLayout();
+            this.stcp_common.SuspendLayout();
+            this.stcp_face.SuspendLayout();
             this.stcp_speech.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ii_UnKownTimes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ii_MicVolumnPickerSleepSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ii_EndPickAdditional)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ii_BufferMilliseconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ii_sensitivity)).BeginInit();
-            this.stcp_common.SuspendLayout();
-            this.stcp_face.SuspendLayout();
             this.SuspendLayout();
             // 
             // stc
@@ -114,6 +119,191 @@
             this.stc.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
             this.stc.SelectedTabChanged += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangedEventArgs>(this.stc_SelectedTabChanged);
             // 
+            // stcp_common
+            // 
+            this.stcp_common.Controls.Add(this.btn_common_cancel);
+            this.stcp_common.Controls.Add(this.btn_common_ok);
+            this.stcp_common.Controls.Add(this.txt_hostUrl);
+            this.stcp_common.Controls.Add(this.label13);
+            this.stcp_common.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stcp_common.Location = new System.Drawing.Point(0, 32);
+            this.stcp_common.Name = "stcp_common";
+            this.stcp_common.Size = new System.Drawing.Size(882, 621);
+            this.stcp_common.TabIndex = 1;
+            this.stcp_common.TabItem = this.sti_common;
+            // 
+            // btn_common_cancel
+            // 
+            this.btn_common_cancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_common_cancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_common_cancel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_common_cancel.Location = new System.Drawing.Point(749, 574);
+            this.btn_common_cancel.Name = "btn_common_cancel";
+            this.btn_common_cancel.Size = new System.Drawing.Size(90, 22);
+            this.btn_common_cancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_common_cancel.TabIndex = 14;
+            this.btn_common_cancel.Text = "取 消";
+            this.btn_common_cancel.Click += new System.EventHandler(this.btn_speech_cancel_Click);
+            // 
+            // btn_common_ok
+            // 
+            this.btn_common_ok.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_common_ok.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_common_ok.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_common_ok.Location = new System.Drawing.Point(632, 574);
+            this.btn_common_ok.Name = "btn_common_ok";
+            this.btn_common_ok.Size = new System.Drawing.Size(90, 22);
+            this.btn_common_ok.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_common_ok.TabIndex = 13;
+            this.btn_common_ok.Text = "确 定";
+            this.btn_common_ok.Click += new System.EventHandler(this.btn_common_ok_Click);
+            // 
+            // txt_hostUrl
+            // 
+            // 
+            // 
+            // 
+            this.txt_hostUrl.Border.Class = "TextBoxBorder";
+            this.txt_hostUrl.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txt_hostUrl.Location = new System.Drawing.Point(134, 19);
+            this.txt_hostUrl.Name = "txt_hostUrl";
+            this.txt_hostUrl.Size = new System.Drawing.Size(703, 30);
+            this.txt_hostUrl.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(33, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 19);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "平台地址";
+            // 
+            // sti_common
+            // 
+            this.sti_common.AttachedControl = this.stcp_common;
+            this.sti_common.GlobalItem = false;
+            this.sti_common.Name = "sti_common";
+            this.sti_common.Text = "通用";
+            // 
+            // stcp_face
+            // 
+            this.stcp_face.Controls.Add(this.btn_faceDecect_cancel);
+            this.stcp_face.Controls.Add(this.btn_faceDetect_ok);
+            this.stcp_face.Controls.Add(this.lbl_faceDetect_state);
+            this.stcp_face.Controls.Add(this.switchButton3);
+            this.stcp_face.Controls.Add(this.sb_faceDetect);
+            this.stcp_face.Controls.Add(this.label10);
+            this.stcp_face.Controls.Add(this.label11);
+            this.stcp_face.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stcp_face.Location = new System.Drawing.Point(0, 0);
+            this.stcp_face.Name = "stcp_face";
+            this.stcp_face.Size = new System.Drawing.Size(882, 653);
+            this.stcp_face.TabIndex = 0;
+            this.stcp_face.TabItem = this.sti_face;
+            // 
+            // btn_faceDecect_cancel
+            // 
+            this.btn_faceDecect_cancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_faceDecect_cancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_faceDecect_cancel.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_faceDecect_cancel.Location = new System.Drawing.Point(754, 574);
+            this.btn_faceDecect_cancel.Name = "btn_faceDecect_cancel";
+            this.btn_faceDecect_cancel.Size = new System.Drawing.Size(90, 22);
+            this.btn_faceDecect_cancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_faceDecect_cancel.TabIndex = 22;
+            this.btn_faceDecect_cancel.Text = "取 消";
+            this.btn_faceDecect_cancel.Click += new System.EventHandler(this.btn_speech_cancel_Click);
+            // 
+            // btn_faceDetect_ok
+            // 
+            this.btn_faceDetect_ok.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_faceDetect_ok.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_faceDetect_ok.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_faceDetect_ok.Location = new System.Drawing.Point(637, 574);
+            this.btn_faceDetect_ok.Name = "btn_faceDetect_ok";
+            this.btn_faceDetect_ok.Size = new System.Drawing.Size(90, 22);
+            this.btn_faceDetect_ok.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btn_faceDetect_ok.TabIndex = 21;
+            this.btn_faceDetect_ok.Text = "确 定";
+            this.btn_faceDetect_ok.Click += new System.EventHandler(this.btn_faceDetect_ok_Click);
+            // 
+            // lbl_faceDetect_state
+            // 
+            this.lbl_faceDetect_state.AutoSize = true;
+            this.lbl_faceDetect_state.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_faceDetect_state.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_faceDetect_state.Location = new System.Drawing.Point(229, 26);
+            this.lbl_faceDetect_state.Name = "lbl_faceDetect_state";
+            this.lbl_faceDetect_state.Size = new System.Drawing.Size(13, 19);
+            this.lbl_faceDetect_state.TabIndex = 20;
+            this.lbl_faceDetect_state.Text = " ";
+            // 
+            // switchButton3
+            // 
+            // 
+            // 
+            // 
+            this.switchButton3.BackgroundStyle.Class = "";
+            this.switchButton3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.switchButton3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.switchButton3.Location = new System.Drawing.Point(227, 79);
+            this.switchButton3.Name = "switchButton3";
+            this.switchButton3.OffText = "手动启动";
+            this.switchButton3.OnText = "自动启动";
+            this.switchButton3.Size = new System.Drawing.Size(149, 22);
+            this.switchButton3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.switchButton3.TabIndex = 9;
+            this.switchButton3.Value = true;
+            // 
+            // sb_faceDetect
+            // 
+            // 
+            // 
+            // 
+            this.sb_faceDetect.BackgroundStyle.Class = "";
+            this.sb_faceDetect.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.sb_faceDetect.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.sb_faceDetect.Location = new System.Drawing.Point(292, 26);
+            this.sb_faceDetect.Name = "sb_faceDetect";
+            this.sb_faceDetect.OffText = "停止";
+            this.sb_faceDetect.OnText = "启动";
+            this.sb_faceDetect.Size = new System.Drawing.Size(84, 22);
+            this.sb_faceDetect.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.sb_faceDetect.TabIndex = 8;
+            this.sb_faceDetect.Value = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(33, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(129, 19);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "登录自动启动服务";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(33, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 19);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "服务运行状态";
+            // 
+            // sti_face
+            // 
+            this.sti_face.AttachedControl = this.stcp_face;
+            this.sti_face.GlobalItem = false;
+            this.sti_face.Name = "sti_face";
+            this.sti_face.Text = "人脸识别";
+            // 
             // stcp_speech
             // 
             this.stcp_speech.Controls.Add(this.lbl_speech_state);
@@ -137,9 +327,9 @@
             this.stcp_speech.Controls.Add(this.label1);
             this.stcp_speech.Controls.Add(this.kc_micSensitivity);
             this.stcp_speech.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stcp_speech.Location = new System.Drawing.Point(0, 32);
+            this.stcp_speech.Location = new System.Drawing.Point(0, 0);
             this.stcp_speech.Name = "stcp_speech";
-            this.stcp_speech.Size = new System.Drawing.Size(882, 621);
+            this.stcp_speech.Size = new System.Drawing.Size(882, 653);
             this.stcp_speech.TabIndex = 0;
             this.stcp_speech.TabItem = this.sti_speech;
             // 
@@ -427,138 +617,14 @@
             this.sti_speech.Name = "sti_speech";
             this.sti_speech.Text = "语音识别";
             // 
-            // stcp_common
-            // 
-            this.stcp_common.Controls.Add(this.label12);
-            this.stcp_common.Controls.Add(this.label13);
-            this.stcp_common.Controls.Add(this.label14);
-            this.stcp_common.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stcp_common.Location = new System.Drawing.Point(0, 32);
-            this.stcp_common.Name = "stcp_common";
-            this.stcp_common.Size = new System.Drawing.Size(882, 621);
-            this.stcp_common.TabIndex = 1;
-            this.stcp_common.TabItem = this.sti_common;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(33, 82);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 19);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "登录自动启动服务";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(33, 26);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 19);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "服务运行状态";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(33, 137);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 19);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "麦克风灵敏度";
-            // 
-            // sti_common
-            // 
-            this.sti_common.AttachedControl = this.stcp_common;
-            this.sti_common.GlobalItem = false;
-            this.sti_common.Name = "sti_common";
-            this.sti_common.Text = "通用";
-            // 
-            // stcp_face
-            // 
-            this.stcp_face.Controls.Add(this.switchButton3);
-            this.stcp_face.Controls.Add(this.switchButton4);
-            this.stcp_face.Controls.Add(this.label10);
-            this.stcp_face.Controls.Add(this.label11);
-            this.stcp_face.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stcp_face.Location = new System.Drawing.Point(0, 32);
-            this.stcp_face.Name = "stcp_face";
-            this.stcp_face.Size = new System.Drawing.Size(882, 621);
-            this.stcp_face.TabIndex = 0;
-            this.stcp_face.TabItem = this.sti_face;
-            // 
-            // switchButton3
-            // 
-            // 
-            // 
-            // 
-            this.switchButton3.BackgroundStyle.Class = "";
-            this.switchButton3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.switchButton3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.switchButton3.Location = new System.Drawing.Point(227, 79);
-            this.switchButton3.Name = "switchButton3";
-            this.switchButton3.OffText = "手动启动";
-            this.switchButton3.OnText = "自动启动";
-            this.switchButton3.Size = new System.Drawing.Size(149, 22);
-            this.switchButton3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.switchButton3.TabIndex = 9;
-            this.switchButton3.Value = true;
-            // 
-            // switchButton4
-            // 
-            // 
-            // 
-            // 
-            this.switchButton4.BackgroundStyle.Class = "";
-            this.switchButton4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.switchButton4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.switchButton4.Location = new System.Drawing.Point(227, 26);
-            this.switchButton4.Name = "switchButton4";
-            this.switchButton4.OffText = "服务停止";
-            this.switchButton4.OnText = "服务运行";
-            this.switchButton4.Size = new System.Drawing.Size(149, 22);
-            this.switchButton4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.switchButton4.TabIndex = 8;
-            this.switchButton4.Value = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(33, 82);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 19);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "登录自动启动服务";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(33, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 19);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "服务运行状态";
-            // 
-            // sti_face
-            // 
-            this.sti_face.AttachedControl = this.stcp_face;
-            this.sti_face.GlobalItem = false;
-            this.sti_face.Name = "sti_face";
-            this.sti_face.Text = "人脸识别";
-            // 
             // timer_speech_state
             // 
             this.timer_speech_state.Interval = 1000;
             this.timer_speech_state.Tick += new System.EventHandler(this.timer_speech_state_Tick);
+            // 
+            // timer_faceSpeech_state
+            // 
+            this.timer_faceSpeech_state.Interval = 1000;
             // 
             // Setup
             // 
@@ -569,11 +635,16 @@
             this.MaximizeBox = false;
             this.Name = "Setup";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "系统设置";
             this.TopMost = true;
             this.Shown += new System.EventHandler(this.Setup_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.stc)).EndInit();
             this.stc.ResumeLayout(false);
+            this.stcp_common.ResumeLayout(false);
+            this.stcp_common.PerformLayout();
+            this.stcp_face.ResumeLayout(false);
+            this.stcp_face.PerformLayout();
             this.stcp_speech.ResumeLayout(false);
             this.stcp_speech.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ii_UnKownTimes)).EndInit();
@@ -581,10 +652,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ii_EndPickAdditional)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ii_BufferMilliseconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ii_sensitivity)).EndInit();
-            this.stcp_common.ResumeLayout(false);
-            this.stcp_common.PerformLayout();
-            this.stcp_face.ResumeLayout(false);
-            this.stcp_face.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -617,14 +684,19 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private DevComponents.DotNetBar.Controls.SwitchButton switchButton3;
-        private DevComponents.DotNetBar.Controls.SwitchButton switchButton4;
+        private DevComponents.DotNetBar.Controls.SwitchButton sb_faceDetect;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbl_speech_state;
         private DevComponents.DotNetBar.Controls.SwitchButton sb_speechState;
         private System.Windows.Forms.Timer timer_speech_state;
+        private System.Windows.Forms.Label lbl_faceDetect_state;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_hostUrl;
+        private DevComponents.DotNetBar.ButtonX btn_common_cancel;
+        private DevComponents.DotNetBar.ButtonX btn_common_ok;
+        private DevComponents.DotNetBar.ButtonX btn_faceDecect_cancel;
+        private DevComponents.DotNetBar.ButtonX btn_faceDetect_ok;
+        private System.Windows.Forms.Timer timer_faceSpeech_state;
     }
 }

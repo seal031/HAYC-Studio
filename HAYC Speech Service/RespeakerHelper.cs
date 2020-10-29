@@ -20,16 +20,27 @@ public class MicVolumnPicker
     private static MMDeviceEnumerator enumerator;
     private static MMDevice[] CaptureDevices;
     private static MMDevice selectedDevice;
+    private static string voicePickerName;//需要获取的麦克风名字关键字，用于查找特定的麦克风
 
     /// <summary>
     /// 初始化
     /// </summary>
-    public static void init()
+    public static bool init()
     {
+        voicePickerName = ConfigWorker.GetConfigValue("voicePickerName");
         enumerator = new MMDeviceEnumerator();
         CaptureDevices = enumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active).ToArray();
         var respeakerIndex = getRespeakerIndexByDevice();
-        selectedDevice = CaptureDevices[respeakerIndex];
+        if (CaptureDevices.Length > 0)
+        {
+            selectedDevice = CaptureDevices[respeakerIndex];
+            return true;
+        }
+        else
+        {
+            LogHelper.WriteLog("当前机器上没有声音输入设备，服务无法启动。");
+            return false;
+        }
     }
 
     public static void dispose()
@@ -49,29 +60,31 @@ public class MicVolumnPicker
         }
         for (int i = 0; i < CaptureDevices.Length; i++)
         {
-            if (CaptureDevices[i].DeviceFriendlyName.ToLower().Contains("respeaker"))
+            if (CaptureDevices[i].DeviceFriendlyName.ToLower().Contains(voicePickerName))
             {
                 return i;
             }
         }
-        LogHelper.WriteLog("没有找到适配的麦克风");
-        return -1;
+        LogHelper.WriteLog("没有找到适配的麦克风，开始使用系统默认的第一个麦克风");
+        //return 0;//todo 为济南测试用，用后删除
+        return 0;
     }/// <summary>
      /// 获取系统中respeaker麦克风的索引
      /// </summary>
      /// <returns></returns>
     public static int getRespeakerIndexByWaveInEvent()
     {
-        int result = -1;
+        int result = 0;
         for (int i = 0; i < WaveInEvent.DeviceCount; i++)
         {
             var device = WaveInEvent.GetCapabilities(i);
-            if (device.ProductName.ToLower().Contains("respeaker"))
+            if (device.ProductName.ToLower().Contains(voicePickerName))
             {
                 return i;
             }
         }
-        LogHelper.WriteLog("没有找到适配的麦克风");
+        LogHelper.WriteLog("没有找到适配的麦克风，开始使用系统默认的第一个麦克风");
+        //return 0;//todo 为济南测试用，用后删除
         return result;
     }
 

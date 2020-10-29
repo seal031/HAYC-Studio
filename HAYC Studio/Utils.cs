@@ -198,16 +198,24 @@ public class TransDicToUserInfo
     {
         LoginInfo loginInfo = new LoginInfo();
 
-        loginInfo.ScreenList = new List<ScreenInfo>();
-        //转换screenList
-        foreach (object screenModel in dic["models"] as List<object>)
+        loginInfo.SceneList = new List<SceneInfo>();
+        //转换sceneList
+        foreach (object sceneModel in dic[""] as List<object>)
         {
-            ScreenInfo screen = new ScreenInfo();
-            Dictionary<string, object> screenModelDic = screenModel as Dictionary<string, object>;
-            screen.ModelName = screenModelDic["modelName"].ToString();
-            screen.ModelIndex = int.Parse(screenModelDic["index"].ToString());
-            screen.ModelURL = screenModelDic["modelUrl"].ToString();
-            loginInfo.ScreenList.Add(screen);
+            SceneInfo scene = new SceneInfo();
+            scene.ScreenList = new List<ScreenInfo>();
+            scene.SceneName = "";
+            //转换screenList
+            foreach (object screenModel in dic["models"] as List<object>)
+            {
+                ScreenInfo screen = new ScreenInfo();
+                Dictionary<string, object> screenModelDic = screenModel as Dictionary<string, object>;
+                screen.ModelName = screenModelDic["modelName"].ToString();
+                screen.ModelIndex = int.Parse(screenModelDic["index"].ToString());
+                screen.ModelURL = screenModelDic["modelUrl"].ToString();
+                scene.ScreenList.Add(screen);
+            }
+            loginInfo.SceneList.Add(scene);
         }
         //转换userInfo
         foreach (object userModel in dic["userInfo"] as List<object>)
@@ -238,6 +246,7 @@ public class TransDicToUserInfo
         info.User = new UserInfo();
         info.User.UserAccount = entity.data.loginKey;
         info.User.UserToken = entity.data.loginValue;
+        info.User.UserRealName = entity.data.userVo.userName;
         return info;
     }
 
@@ -245,16 +254,29 @@ public class TransDicToUserInfo
     {
         if (entity == null) return info;
         LoginInfo loginInfo = new LoginInfo();
-        loginInfo.ScreenList = new List<ScreenInfo>();
-        //转换screenList
-        foreach (var screenModel in entity.datalist)
+        loginInfo.SceneList = new List<SceneInfo>();
+        //转换sceneList
+        foreach (var sceneModel in entity.datalist)
         {
-            ScreenInfo screen = new ScreenInfo();
-            screen.ModelName = screenModel.screenName;
-            screen.ModelIndex = screenModel.displayIndex;
-            screen.ModelURL = screenModel.screenUrl;
-            screen.browserType = (BrowserType)Enum.Parse(typeof(BrowserType), screenModel.browserTypeName);
-            loginInfo.ScreenList.Add(screen);
+            SceneInfo scene = new SceneInfo();
+            scene.ScreenList = new List<ScreenInfo>();
+            scene.SceneName = sceneModel.sceneName;
+            //转换screenList
+            foreach (var screenModel in sceneModel.sceneInfo)
+            {
+                ScreenInfo screen = new ScreenInfo();
+                screen.ModelName = screenModel.screenName;
+                screen.ModelIndex = screenModel.displayIndex;
+                screen.ModelURL = screenModel.screenUrl;
+                screen.browserType = (BrowserType)Enum.Parse(typeof(BrowserType), screenModel.browserTypeName);
+                double ratio;
+                if (double.TryParse(screenModel.screenRatio.Replace("%",""), out ratio))
+                {
+                    screen.ratio = ratio * 0.01;
+                }
+                scene.ScreenList.Add(screen);
+            }
+            loginInfo.SceneList.Add(scene);
         }
         loginInfo.User = info.User;
         return loginInfo;
@@ -275,7 +297,7 @@ public class ScreenWorker
 
 public class FormBuilder
 {
-    public ScreenForm createForm(int left, int top, int width, int height, string pageName, BaseVideoForm videoForm)
+    public static ScreenForm createForm(int left, int top, int width, int height, string pageName, BaseVideoForm videoForm)
     {
         ScreenForm form = FormController.getFormIfExits(pageName);
         if (form == null)
@@ -292,7 +314,7 @@ public class FormBuilder
         //form.ControlBox = false;//不显示自带按钮
         return form;
     }
-    public ScreenForm createForm(int left, int top, int width, int height, string pageName)
+    public static ScreenForm createForm(int left, int top, int width, int height, string pageName)
     {
         ScreenForm form = FormController.getFormIfExits(pageName);
         if (form == null)
@@ -300,12 +322,26 @@ public class FormBuilder
             form = new ScreenForm();
         }
         form.StartPosition = FormStartPosition.Manual;
-        //设置Form位置和大小
         form.Location = new System.Drawing.Point(left, top);
         //form.Top = top;
         form.Size = new System.Drawing.Size(width, height);
         form.MaximizeBox = false;
-        //form.ControlBox = false;//不显示自带按钮
+        return form;
+    }
+
+    public static SingleMainStudio createForm(int left, int top, int width, int height, string pageName, LoginInfo loginInfo, string remoteUr)
+    {
+        SingleMainStudio form = FormController.singleMainStudio;
+        if (form == null)
+        {
+            form = new SingleMainStudio(loginInfo, remoteUr);
+            form.isMaster = true;
+            FormController.singleMainStudio = form;
+        }
+        form.StartPosition = FormStartPosition.Manual;
+        form.Location = new System.Drawing.Point(left, top);
+        form.Size = new System.Drawing.Size(width, height);
+        form.MaximizeBox = false;
         return form;
     }
 }
