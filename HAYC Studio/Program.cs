@@ -16,7 +16,7 @@ namespace HAYC_Studio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LoginFormHaikou());
             ////Application.Run(new LevitatedBall.LevitateBall());
         }
     }

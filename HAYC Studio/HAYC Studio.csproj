@@ -207,6 +207,12 @@
     <Compile Include="IEWebbrowserMemoryReleaser.cs" />
     <Compile Include="IForm.cs" />
     <Compile Include="JobWorker.cs" />
+    <Compile Include="LoginFormHaikou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFormHaikou.Designer.cs">
+      <DependentUpon>LoginFormHaikou.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     <Compile Include="WindowsServiceManager.cs" />
     <EmbeddedResource Include="FaceRegist.resx">
       <DependentUpon>FaceRegist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFormHaikou.resx">
+      <DependentUpon>LoginFormHaikou.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
