@@ -1,0 +1,9 @@
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\bin\x86\Debug\StudioLicenseCreater.exe.config
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\bin\x86\Debug\StudioLicenseCreater.exe
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\bin\x86\Debug\StudioLicenseCreater.pdb
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\obj\x86\Debug\StudioLicenseCreater.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\obj\x86\Debug\StudioLicenseCreater.Form1.resources
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\obj\x86\Debug\StudioLicenseCreater.Properties.Resources.resources
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\obj\x86\Debug\StudioLicenseCreater.csproj.GenerateResource.Cache
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\obj\x86\Debug\StudioLicenseCreater.exe
+E:\GitHubProject\HAYC Studio\StudioLicenseCreater\obj\x86\Debug\StudioLicenseCreater.pdb

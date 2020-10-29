@@ -1,0 +1,40 @@
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\HAYC Speech Service.exe.config
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\HAYC Speech Service.exe
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\HAYC Speech Service.pdb
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Common.Logging.Core.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Common.Logging.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\DevComponents.DotNetBar2.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\ESBasic.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\HAYC ProcessCommunicate Library.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\log4net.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\NamedPipeWrapper.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\NAudio.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Newtonsoft.Json.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Oraycn.MPlayer.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Quartz.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.Common.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.Facility.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.SocketBase.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.SocketEngine.dll
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.SocketService.exe
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\HAYC ProcessCommunicate Library.pdb
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Common.Logging.pdb
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Common.Logging.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Common.Logging.Core.pdb
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Common.Logging.Core.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\DevComponents.DotNetBar2.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\log4net.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\NamedPipeWrapper.pdb
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\NAudio.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Newtonsoft.Json.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Quartz.pdb
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\Quartz.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.Common.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.Facility.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.SocketBase.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\bin\x86\Debug\SuperSocket.SocketEngine.xml
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\x86\Debug\HAYC Speech Service.csprojResolveAssemblyReference.cache
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\x86\Debug\HAYC_Speech_Service.ProjectInstaller.resources
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\x86\Debug\HAYC Speech Service.csproj.GenerateResource.Cache
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\x86\Debug\HAYC Speech Service.exe
+E:\GitHubProject\HAYC Studio\HAYC Speech Service\obj\x86\Debug\HAYC Speech Service.pdb
