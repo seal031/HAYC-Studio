@@ -173,3 +173,4 @@ E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC_Studio.SingleMainStu
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\HAYC Studio.csproj.GenerateResource.Cache
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\Smart安全智能终端.exe
 E:\GitHubProject\HAYC Studio\HAYC Studio\obj\x86\Debug\Smart安全智能终端.pdb
+E:\GitHubProject\HAYC Studio\HAYC Studio\bin\x86\Debug\BouncyCastle.Crypto.dll

@@ -239,6 +239,7 @@ namespace HAYC_Studio
                                 wb = panel.Controls[0] as IHaycBrowser;
                                 //panel.Controls.Add((WebBrowser)wb);
                                 //((WebBrowser)wb).Dock = DockStyle.Fill;
+                                LogHelper.WriteLog("执行IE浏览器组件清理");
                                 IntPtr pHandle = IEWebbrowserMemoryReleaser.GetCurrentProcess();
                                 IEWebbrowserMemoryReleaser.SetProcessWorkingSetSize(pHandle, -1, -1);
                                 wb.Navigate(remoteUrl + screenInfo.ModelURL, cookieKey, cookieValue);
@@ -746,7 +747,7 @@ namespace HAYC_Studio
             CaptureDevices = enumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active).ToArray();
             foreach (var device in CaptureDevices)
             {
-                LogHelper.WriteLog("找到一个麦克风，名字是" + device.DeviceFriendlyName);
+                //LogHelper.WriteLog("找到一个麦克风，名字是" + device.DeviceFriendlyName);
             }
             for (int i = 0; i < CaptureDevices.Length; i++)
             {

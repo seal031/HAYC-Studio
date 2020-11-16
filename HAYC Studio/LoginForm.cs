@@ -198,7 +198,10 @@ namespace HAYC_Studio
             /////////////////用户名、密码转码，解决含特殊字符的问题//////////////////////
             username = System.Web.HttpUtility.UrlEncode(username, System.Text.Encoding.UTF8);
             password = System.Web.HttpUtility.UrlEncode(password, System.Text.Encoding.UTF8);
-            string loginHead = "{\"loginName\": \"" + username + "\",\"loginPass\": \"" + password + "\"}";
+            //导入公钥 加密(20201110添加)
+            string publicKey = @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqRK6V0ylacNFH+K7b/PG9txPzXk69gjslEi5N16CQUUHh6aVhhsyj7aAKDTEp76odCdi0tIlv3FTuW41G8ma+QKGChOF+036a3DoKysDHrkuaB5o//jDBfE48mGtNZt4chsJdvYEDsj7StmsZPW5wuQoJzvzZu4oKO5SRZzjDPQIDAQAB";
+            string RsaPassword = RsaWorker.EncryptByPublicKey(password + "," + RsaWorker.GetTimeStamp(), publicKey);
+            string loginHead = "{\"loginName\": \"" + username + "\",\"loginPass\": \"" + RsaPassword + "\"}";
             try
             {
                 string strResponse = HttpWorker.PostByHttpClient(loginURL, loginHead);
