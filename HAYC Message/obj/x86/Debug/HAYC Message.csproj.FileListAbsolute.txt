@@ -4,4 +4,3 @@ E:\GitHubProject\HAYC Studio\HAYC Message\bin\x86\Debug\Newtonsoft.Json.dll
 E:\GitHubProject\HAYC Studio\HAYC Message\bin\x86\Debug\Newtonsoft.Json.xml
 E:\GitHubProject\HAYC Studio\HAYC Message\obj\x86\Debug\HAYC Message.dll
 E:\GitHubProject\HAYC Studio\HAYC Message\obj\x86\Debug\HAYC Message.pdb
-E:\GitHubProject\HAYC Studio\HAYC Message\obj\x86\Debug\HAYC Message.csprojResolveAssemblyReference.cache
